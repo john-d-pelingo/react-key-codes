@@ -1,0 +1,57 @@
+{
+  "name": "react-keycode",
+  "version": "0.1.0",
+  "description": "Reveal the JavaScript keycode on key press. Built with react and redux and friends. Bootstrapped with the help of Facebook's create-react-app.",
+  "private": false,
+  "homepage": "https://john-d-pelingo.github.io/react-keycode",
+  "author": "John Darryl Pelingo <johndarrylpelingo@gmail.com> (https://github.com/john-d-pelingo)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/john-d-pelingo/react-keycode.git"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "clean": "del-cli build",
+    "lint": "eslint -c .eslintrc.yml *.js src",
+    "deploy": "npm run clean && npm run build && gh-pages -d build"
+  },
+  "keywords": [
+    "airbnb-javascript",
+    "create-react-app",
+    "css",
+    "es6",
+    "eslint",
+    "eslint-config",
+    "gh-pages",
+    "html",
+    "immutable",
+    "jsx",
+    "react",
+    "react-dom",
+    "react-ga",
+    "react-redux",
+    "rect-scripts",
+    "redux",
+    "redux-thunk",
+    "reselect"
+  ],
+  "dependencies": {
+    "react": "15.5.3",
+    "react-dom": "15.5.3",
+    "react-ga": "2.1.2"
+  },
+  "devDependencies": {
+    "del-cli": "0.2.1",
+    "eslint": "3.19.0",
+    "eslint-config-airbnb": "14.1.0",
+    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-jsx-a11y": "4.0.0",
+    "eslint-plugin-react": "6.10.3",
+    "gh-pages": "0.12.0",
+    "react-scripts": "0.9.5"
+  }
+}
