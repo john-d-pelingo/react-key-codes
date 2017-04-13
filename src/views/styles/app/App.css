@@ -1,0 +1,17 @@
+html, body, #root {
+    height     : 100%;
+    min-height : 400px;
+}
+
+.App {
+    text-align : center;
+    display    : table;
+    height     : 100%;
+    margin     : 0 auto;
+}
+
+.App .press-something {
+    display        : table-cell;
+    vertical-align : middle;
+    font           : 50px/55px 'Raleway', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+}

@@ -1,23 +1,19 @@
-# react-keycode
+# react-key-codes
 
-Reveal the JavaScript keycode on key press. Built with react and redux and friends. Bootstrapped with the help of Facebook's create-react-app.                         
+Reveal the JavaScript key codes on key down. Built with react and redux and friends. Bootstrapped with the help of Facebook's create-react-app.                         
 
 ## Stack
 
-- [x] Immutable
 - [x] React
-- [x] React-Redux
-- [x] Redux
-- [x] Redux-Thunk
-- [x] Redux-Devtools-Extension for Chrome
-- [x] Reselect
+
+Alongside pure JavaScript.
 
 ## Installation
 
 Clone the repository:
 
 ```sh
-$ git clone https://github.com/john-d-pelingo/react-keycode && cd react-keycode
+$ git clone https://github.com/john-d-pelingo/react-key-codes && cd react-key-codes
 ```
 
 Install npm dependencies:
@@ -89,4 +85,4 @@ feature. However we understand that this tool wouldn’t be useful if you couldn
 
 ## License
 
-[MIT](https://github.com/john-d-pelingo/rect-keycode/blob/master/LICENSE) &copy; 2017-present
+[MIT](https://github.com/john-d-pelingo/react-key-codes/blob/master/LICENSE) &copy; 2017-present

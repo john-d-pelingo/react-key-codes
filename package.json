@@ -1,23 +1,24 @@
 {
-  "name": "react-keycode",
-  "version": "0.1.0",
-  "description": "Reveal the JavaScript keycode on key press. Built with react and redux and friends. Bootstrapped with the help of Facebook's create-react-app.",
+  "name": "react-key-codes",
+  "version": "0.0.2",
+  "description": "Reveal the JavaScript key codes on key down. Built with react and redux and friends. Bootstrapped with the help of Facebook's create-react-app.",
   "private": false,
-  "homepage": "https://john-d-pelingo.github.io/react-keycode",
+  "homepage": "https://john-d-pelingo.github.io/react-key-codes",
   "author": "John Darryl Pelingo <johndarrylpelingo@gmail.com> (https://github.com/john-d-pelingo)",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/john-d-pelingo/react-keycode.git"
+    "url": "git+https://github.com/john-d-pelingo/react-key-codes.git"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
     "clean": "del-cli build",
+    "deploy": "npm run build && gh-pages -d build",
+    "eject": "react-scripts eject",
     "lint": "eslint -c .eslintrc.yml *.js src",
-    "deploy": "npm run clean && npm run build && gh-pages -d build"
+    "prebuild": "run-s clean lint test",
+    "start": "react-scripts start",
+    "test": "cross-env CI=true react-scripts test --env=jsdom"
   },
   "keywords": [
     "airbnb-javascript",
@@ -28,23 +29,22 @@
     "eslint-config",
     "gh-pages",
     "html",
-    "immutable",
     "jsx",
     "react",
     "react-dom",
     "react-ga",
     "react-redux",
     "rect-scripts",
-    "redux",
-    "redux-thunk",
     "reselect"
   ],
   "dependencies": {
+    "prop-types": "15.5.8",
     "react": "15.5.3",
     "react-dom": "15.5.3",
     "react-ga": "2.1.2"
   },
   "devDependencies": {
+    "cross-env": "4.0.0",
     "del-cli": "0.2.1",
     "eslint": "3.19.0",
     "eslint-config-airbnb": "14.1.0",
@@ -52,6 +52,7 @@
     "eslint-plugin-jsx-a11y": "4.0.0",
     "eslint-plugin-react": "6.10.3",
     "gh-pages": "0.12.0",
+    "npm-run-all": "4.0.2",
     "react-scripts": "0.9.5"
   }
 }
