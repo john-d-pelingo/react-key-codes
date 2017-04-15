@@ -1,7 +1,7 @@
 {
   "name": "react-key-codes",
   "version": "0.0.2",
-  "description": "Reveal the JavaScript key codes on key down. Built with react and redux and friends. Bootstrapped with the help of Facebook's create-react-app.",
+  "description": "Reveal the JavaScript key codes on key down. Built with react and friends. Bootstrapped with the help of Facebook's create-react-app.",
   "private": false,
   "homepage": "https://john-d-pelingo.github.io/react-key-codes",
   "author": "John Darryl Pelingo <johndarrylpelingo@gmail.com> (https://github.com/john-d-pelingo)",
@@ -16,9 +16,10 @@
     "deploy": "npm run build && gh-pages -d build",
     "eject": "react-scripts eject",
     "lint": "eslint -c .eslintrc.yml *.js src",
-    "prebuild": "run-s clean lint test",
+    "prebuild": "run-s clean lint test:deploy",
     "start": "react-scripts start",
-    "test": "cross-env CI=true react-scripts test --env=jsdom"
+    "test": "react-scripts test --env=jsdom",
+    "test:deploy": "cross-env CI=true react-scripts test --env=jsdom"
   },
   "keywords": [
     "airbnb-javascript",
@@ -33,9 +34,8 @@
     "react",
     "react-dom",
     "react-ga",
-    "react-redux",
-    "rect-scripts",
-    "reselect"
+    "react-scripts",
+    "redux-devtools-extension"
   ],
   "dependencies": {
     "prop-types": "15.5.8",

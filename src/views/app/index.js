@@ -22,16 +22,19 @@ class App extends React.Component {
             newKeyCode: null,
             previousKeyCode: ''
         };
+
+        this.handleKeyDown = this.handleKeyDown.bind(this);
     }
 
     componentWillMount() {
-        document.addEventListener('keydown', this._handleKeyDown.bind(this));
+        document.addEventListener('keydown', this.handleKeyDown);
     }
 
-    _handleKeyDown(event) {
+    handleKeyDown(event) {
         this.setState(function (prevState) {
             return {
-                newKeyCode: event.which,
+                newKeyCode: 'which' in event ? event.which : event.keyCode,
+                // or event.which || event.keyCode || 0;
                 previousKeyCode: prevState.newKeyCode
             };
         });

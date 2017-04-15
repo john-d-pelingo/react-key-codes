@@ -6,12 +6,13 @@ import App from './views/app';
 // Base styles.
 import './views/styles/index.css';
 
-// Main App CSS.
+// Main App styles.
 import './views/styles/app/App.css';
 
-// Components CSS.
+// Components styles.
 import './views/styles/components/KeyCode.css';
 
+// TODO: JS Meta Keys (CMD of MacOS).
 ReactDOM.render(
     <App />,
     document.getElementById('root')
