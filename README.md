@@ -2,9 +2,13 @@
 
 Reveal the JavaScript key codes on key down. Built with react and redux and friends. Bootstrapped with the help of Facebook's create-react-app.                         
 
+Try the demo at [https://john-d-pelingo.github.io/react-key-codes/](https://john-d-pelingo.github.io/react-key-codes/).
+
 ## Stack
 
+- [x] Prop-Types
 - [x] React
+- [x] React-Dom
 
 Alongside pure JavaScript.
 
