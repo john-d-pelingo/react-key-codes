@@ -1,15 +1,15 @@
-.KeyCode {
+.key-code {
     display        : table-cell;
     vertical-align : middle;
 }
 
-.KeyCode .key-code {
+.key-code .key-code-code {
     display        : block;
     font           : 150px/160px 'Raleway', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
     padding-bottom : 40px;
 }
 
-.KeyCode .key-text {
+.key-code .key-code-text {
     cursor          : pointer;
     position        : relative;
     display         : inline-block;

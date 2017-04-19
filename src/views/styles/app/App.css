@@ -3,14 +3,14 @@ html, body, #root {
     min-height : 400px;
 }
 
-.App {
+.app {
     text-align : center;
     display    : table;
     height     : 100%;
     margin     : 0 auto;
 }
 
-.App .press-something {
+.app .press-something {
     display        : table-cell;
     vertical-align : middle;
     font           : 50px/55px 'Raleway', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;

@@ -11,9 +11,9 @@ const defaultProps = {
 };
 
 const KeyCode = ({ keyCode, keyText }) => (
-    <div className="KeyCode">
-        <span className="key-code">{ keyCode }</span>
-        <span className="key-text">{ keyText || 'What key code is that?' }</span>
+    <div className="key-code">
+        <span className="key-code-code">{ keyCode }</span>
+        <span className="key-code-text">{ keyText || 'What key code is that?' }</span>
     </div>
 );
 
