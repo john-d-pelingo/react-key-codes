@@ -17,9 +17,10 @@ ecmaFeatures:
   jsx: true
   modules: true
 
-# globals:
-#   firebase: true
-#   sinon: true
+globals:
+  mount: true
+  render: true
+  shallow: true
 
 rules:
 

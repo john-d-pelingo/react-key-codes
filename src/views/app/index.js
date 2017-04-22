@@ -1,7 +1,6 @@
-/* eslint-disable react/prefer-stateless-function */
+/* eslint-disable react/prefer-stateless-function, jsx-a11y/no-static-element-interactions */
 
 import React from 'react';
-import ReactGA from 'react-ga';
 
 import KeyCode from '../components';
 import '../styles/app/App.css';
@@ -13,6 +12,9 @@ class App extends React.Component {
         super(props);
 
         if (process.env.NODE_ENV !== 'test') {
+            // eslint-disable-next-line global-require
+            const ReactGA = require('react-ga');
+
             ReactGA.initialize('UA-70753213-5');
             // This just needs to be called once since we have no routes in this case.
             ReactGA.pageview(window.location.pathname);
@@ -26,11 +28,11 @@ class App extends React.Component {
         this.handleKeyDown = this.handleKeyDown.bind(this);
     }
 
-    componentWillMount() {
-        document.addEventListener('keydown', this.handleKeyDown);
-    }
-
     handleKeyDown(event) {
+        // Keep the original synthetic event around.
+        // See https://fb.me/react-event-pooling for more information.
+        event.persist();
+
         this.setState(function (prevState) {
             return {
                 newKeyCode: 'which' in event ? event.which : event.keyCode,
@@ -50,7 +52,9 @@ class App extends React.Component {
         };
 
         return (
-            <div className="app">
+            // tabindex="0" allows elements besides links and form elements to receive keyboard focus.
+            // See http://webaim.org/techniques/keyboard/tabindex for more information.
+            <div className="app" tabIndex="0" onKeyDown={ this.handleKeyDown }>
                 { conditionallyRenderKeyCode() }
             </div>
         );

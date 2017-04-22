@@ -1,3 +1,3 @@
-import KeyCode from './KeyCode';
+import KeyCode from './KeyCode/KeyCode';
 
 export default KeyCode;
