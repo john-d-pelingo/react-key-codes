@@ -38,14 +38,25 @@ describe('App Main Container', () => {
         it('should render "Press something in your keyboard" with no keyCode provided', () => {
             expect(render(<App />).text()).toEqual('Press something in your keyboard');
         });
+
+        it('shouldn\'t render "Press something in your keyboard" with keyCode provided', () => {
+            const newState = {
+                ...defaultState,
+                newKeyCode: 188
+            };
+
+            expect(shallow(<App />).setState(newState).text()).toContain('KeyCode');
+        });
     });
 
     describe('Simulation', () => {
-        it('should remove default message when a key is pressed', () => {
+        it('#keyDown: should remove default message when a key is pressed', () => {
             const wrapper = mount(<App />);
 
             expect(wrapper.find('.press-something')).toHaveLength(1);
+
             wrapper.find('.app').simulate('keyDown', { keyCode: 9, which: 9 });
+
             expect(wrapper.find('.press-something')).toHaveLength(0);
         });
     });

@@ -11,7 +11,8 @@ describe('KeyCode Component', () => {
     beforeEach(() => {
         defaultProps = {
             keyCode: null,
-            keyText: ''
+            keyText: '',
+            handleClick: () => {}
         };
     });
 

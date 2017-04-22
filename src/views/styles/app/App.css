@@ -4,14 +4,15 @@ html, body, #root {
 }
 
 .app {
-    text-align : center;
     display    : table;
     height     : 100%;
     margin     : 0 auto;
+    text-align : center;
+    width      : 100%;
 }
 
 .app .press-something {
     display        : table-cell;
-    vertical-align : middle;
     font           : 50px/55px 'Raleway', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    vertical-align : middle;
 }

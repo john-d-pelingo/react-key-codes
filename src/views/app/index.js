@@ -3,7 +3,6 @@
 import React from 'react';
 
 import KeyCode from '../components';
-import '../styles/app/App.css';
 
 import KEY_CODES from '../../core/constants';
 
@@ -26,6 +25,11 @@ class App extends React.Component {
         };
 
         this.handleKeyDown = this.handleKeyDown.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    componentDidMount() {
+        this.appDOMNode.focus();
     }
 
     handleKeyDown(event) {
@@ -42,19 +46,28 @@ class App extends React.Component {
         });
     }
 
+    handleClick(event) {
+        event.preventDefault();
+
+        this.setState({
+            newKeyCode: null,
+            previousKeyCode: ''
+        });
+    }
+
     render() {
         const { newKeyCode } = this.state;
 
         const conditionallyRenderKeyCode = () => {
             return newKeyCode ?
-                (<KeyCode keyCode={ newKeyCode } keyText={ KEY_CODES[newKeyCode] ? KEY_CODES[newKeyCode] : '' } />)
+                (<KeyCode keyCode={ newKeyCode } keyText={ KEY_CODES[newKeyCode] ? KEY_CODES[newKeyCode] : '' } handleClick={ this.handleClick } />)
                 : (<span className="press-something">Press something in your keyboard</span>);
         };
 
         return (
             // tabindex="0" allows elements besides links and form elements to receive keyboard focus.
             // See http://webaim.org/techniques/keyboard/tabindex for more information.
-            <div className="app" tabIndex="0" onKeyDown={ this.handleKeyDown }>
+            <div className="app" tabIndex="0" onKeyDown={ this.handleKeyDown } ref={ appDOMNode => { this.appDOMNode = appDOMNode; } }>
                 { conditionallyRenderKeyCode() }
             </div>
         );

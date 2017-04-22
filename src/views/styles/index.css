@@ -49,3 +49,9 @@ body {
     position   : relative;
     width      : 100%;
 }
+
+/* === Project === */
+
+body {
+    overflow-x : visible;
+}
