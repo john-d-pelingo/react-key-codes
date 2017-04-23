@@ -9,10 +9,11 @@ html, body, #root {
     margin     : 0 auto;
     text-align : center;
     width      : 100%;
-}
 
-.app .press-something {
-    display        : table-cell;
-    font           : 50px/55px 'Raleway', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
-    vertical-align : middle;
+    .press-something {
+        display        : table-cell;
+        font           : 50px/55px 'Raleway', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+        vertical-align : middle;
+    }
+
 }
