@@ -1,6 +1,6 @@
 {
   "name": "react-key-codes",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Reveal the JavaScript key codes on key down. Built with react and friends. Bootstrapped with the help of Facebook's create-react-app.",
   "private": false,
   "homepage": "https://john-d-pelingo.github.io/react-key-codes",
@@ -47,7 +47,7 @@
     "react": "15.5.3",
     "react-dom": "15.5.3",
     "react-ga": "2.2.0",
-    "sieses": "0.1.1"
+    "sieses": "0.1.2"
   },
   "devDependencies": {
     "cross-env": "4.0.0",

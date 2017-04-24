@@ -1,4 +1,6 @@
-@import url(~sieses/dist/sieses.css);
+@import url(~sieses/dist/parts/reset.css);
+@import url(~sieses/dist/parts/elements.css);
+@import url(~sieses/dist/parts/template.css);
 @import url("https://fonts.googleapis.com/css?family=Raleway");
 html, body, #root {
     height: 100%;
