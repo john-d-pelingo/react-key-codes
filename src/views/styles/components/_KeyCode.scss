@@ -4,7 +4,8 @@
 
     .key-code-code {
         display        : block;
-        font           : 150px/160px 'Raleway', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+        font-size      : 150px;
+        line-height    : 160px;
         padding-bottom : 40px;
     }
 
@@ -16,7 +17,7 @@
         color           : #aaa;
         cursor          : pointer;
         display         : inline-block;
-        font            : 38px/40px 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+        font            : 38px/40px 'Helvetica Neue';
         font-weight     : bold;
         margin          : 0;
         padding         : 15px 30px;

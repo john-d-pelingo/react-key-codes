@@ -1,3 +1,7 @@
-import KeyCode from './KeyCode/KeyCode';
+import KeyCode from './KeyCode';
+import MobilePop from './MobilePop';
 
-export default KeyCode;
+export {
+    KeyCode,
+    MobilePop
+};

@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import KeyCode from '../components';
+import { KeyCode } from '../components';
 
 import KEY_CODES from '../../core/constants';
 
