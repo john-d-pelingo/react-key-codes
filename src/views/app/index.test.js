@@ -13,32 +13,34 @@ describe('App Main Container', () => {
         };
     });
 
-    it('renders without crashing', () => {
-        const div = document.createElement('div');
-        ReactDOM.render(<App />, div);
+    describe('Default suite', () => {
+        it('renders without crashing', () => {
+            const div = document.createElement('div');
+            ReactDOM.render(<App />, div);
+        });
+
+        it('should be selectable by class "app"', () => {
+            expect(shallow(<App />).is('.app')).toBe(true);
+        });
+
+        it('should mount in a full DOM', () => {
+            const wrapper = mount(<App />);
+            expect(wrapper.find('.app').length).toBe(1);
+            expect(wrapper.find('.key-code')).toHaveLength(0);
+        });
+
+        it('should render "Press something in your keyboard" with no keyCode provided', () => {
+            expect(render(<App />).text()).toEqual('Press something in your keyboard');
+        });
     });
 
-    it('should be selectable by class "app"', () => {
-        expect(shallow(<App />).is('.app')).toBe(true);
-    });
-
-    it('should mount in a full DOM', () => {
-        const wrapper = mount(<App />);
-        expect(wrapper.find('.app').length).toBe(1);
-        expect(wrapper.find('.key-code')).toHaveLength(0);
-    });
-
-    describe('State', () => {
+    describe('Default state', () => {
         it('should have no previous and new key code as default', () => {
             expect(shallow(<App />).state()).toEqual(defaultState);
         });
     });
 
-    describe('Rendering static HTML', () => {
-        it('should render "Press something in your keyboard" with no keyCode provided', () => {
-            expect(render(<App />).text()).toEqual('Press something in your keyboard');
-        });
-
+    describe('New state', () => {
         it('shouldn\'t render "Press something in your keyboard" with keyCode provided', () => {
             const newState = {
                 ...defaultState,
