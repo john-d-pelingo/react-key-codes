@@ -10,6 +10,20 @@ Try the demo at [https://john-d-pelingo.github.io/react-key-codes/](https://john
 - [x] React
 - [x] React-Dom
 
+## Development Stack
+
+- [x] cross-env
+- [x] eslint
+- [x] gh-pages
+- [x] node-sass
+- [x] npm-run-all
+- [x] rimraf
+
+## Test Stack 
+
+- [x] enzyme
+- [x] jest
+
 Alongside pure JavaScript.
 
 ## Installation
