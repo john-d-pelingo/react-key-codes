@@ -1,6 +1,6 @@
 {
   "name": "react-key-codes",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Reveal the JavaScript key codes on key down. Built with react and friends. Bootstrapped with the help of Facebook's create-react-app.",
   "private": false,
   "homepage": "https://john-d-pelingo.github.io/react-key-codes",
@@ -44,22 +44,22 @@
     "redux-devtools-extension"
   ],
   "dependencies": {
-    "prop-types": "15.5.8",
-    "react": "15.5.3",
-    "react-dom": "15.5.3",
+    "prop-types": "15.5.10",
+    "react": "15.5.4",
+    "react-dom": "15.5.4",
     "react-ga": "2.2.0",
     "sieses": "0.1.3"
   },
   "devDependencies": {
-    "cross-env": "4.0.0",
+    "cross-env": "5.0.0",
     "enzyme": "2.8.2",
     "eslint": "3.19.0",
     "eslint-config-airbnb": "14.1.0",
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-jsx-a11y": "4.0.0",
     "eslint-plugin-react": "6.10.3",
-    "gh-pages": "0.12.0",
-    "node-sass": "4.5.2",
+    "gh-pages": "1.0.0",
+    "node-sass": "4.5.3",
     "nodemon": "1.11.0",
     "npm-run-all": "4.0.2",
     "react-scripts": "0.9.5",

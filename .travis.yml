@@ -1,0 +1,18 @@
+sudo: false
+language: node_js
+node_js:
+  - "7"
+  - "6"
+  - "stable"
+
+env:
+#  global:
+#    - BUILD_TIMEOUT=10000
+
+before_install: rm -rf node_modules
+
+install: npm install
+
+script: npm run build
+
+after_success: ./node_modules/gh-pages/bin/gh-pages -d build
