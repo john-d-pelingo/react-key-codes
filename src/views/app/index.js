@@ -1,4 +1,4 @@
-/* eslint-disable react/prefer-stateless-function, jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/no-noninteractive-tabindex, jsx-a11y/no-static-element-interactions */
 
 import React from 'react';
 
