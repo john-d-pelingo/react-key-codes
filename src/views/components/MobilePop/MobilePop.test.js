@@ -5,9 +5,19 @@ import MobilePop from './index';
 
 describe('MobilePop Component', () => {
     describe('Default suite', () => {
-        it('renders without crashing', () => {
+        it('should render without crashing', () => {
             const div = document.createElement('div');
             ReactDOM.render(<MobilePop />, div);
+        });
+
+        it('should render without throwing an error', () => {
+            expect(shallow(<MobilePop />).contains(
+                <div className="mobile-pop">
+                    <span className="hello-it-seems">
+                        Hello! <br />It seems like you are browsing this webpage without a keyboard or a mouse. <br />Better luck next time!
+                    </span>
+                </div>
+            )).toBe(true);
         });
 
         it('should be selectable by class ".mobile-pop"', () => {

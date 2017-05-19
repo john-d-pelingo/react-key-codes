@@ -12,14 +12,19 @@ describe('KeyCode Component', () => {
         defaultProps = {
             keyCode: null,
             keyText: '',
-            handleClick: () => {}
+            handleClick: () => {
+            }
         };
     });
 
     describe('Default props', () => {
-        it('renders without crashing', () => {
+        it('should render without crashing', () => {
             const div = document.createElement('div');
             ReactDOM.render(<KeyCode { ...defaultProps } />, div);
+        });
+
+        it('should render without throwing an error', () => {
+            expect(shallow(<KeyCode { ...defaultProps } />).contains(<span className="key-code-code" />)).toBe(true);
         });
 
         it('should be selectable by class ".key-code"', () => {

@@ -16,9 +16,13 @@ describe('App Main Container', () => {
     });
 
     describe('Default suite', () => {
-        it('renders without crashing', () => {
+        it('should render without crashing', () => {
             const div = document.createElement('div');
             ReactDOM.render(<App />, div);
+        });
+
+        it('should render without throwing an error', function () {
+            expect(shallow(<App />).contains(<span className="press-something">Press something in your keyboard</span>)).toBe(true);
         });
 
         it('should be selectable by class ".app"', () => {
