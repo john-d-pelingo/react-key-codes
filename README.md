@@ -107,5 +107,5 @@ feature. However we understand that this tool wouldn’t be useful if you couldn
 
 [MIT](https://github.com/john-d-pelingo/react-key-codes/blob/master/LICENSE) &copy; 2017-present
 
-[travis]: http://img.shields.io/travis/webpack-contrib/react-key-codes.svg
+[travis]: https://travis-ci.org/john-d-pelingo/react-key-codes.svg?branch=master
 [travis-url]: https://travis-ci.org/john-d-pelingo/react-key-codes
