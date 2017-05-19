@@ -20,16 +20,52 @@ class App extends React.Component {
         }
 
         this.state = {
+            blurred: false,
+            id: 'app',
             newKeyCode: null,
             previousKeyCode: ''
         };
 
-        this.handleKeyDown = this.handleKeyDown.bind(this);
+        // this._setStateBlurred = this._setStateBlurred.bind(this);
+        this.handleBlur = this.handleBlur.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.handleKeyDown = this.handleKeyDown.bind(this);
     }
 
     componentDidMount() {
+        this._setStateBlurred(false);
+    }
+
+    componentDidUpdate() {
+        if (this.state.blurred === true) {
+            this._setStateBlurred(false);
+        }
+    }
+
+    _setStateBlurred(blurred = false) {
         this.appDOMNode.focus();
+        return this.setState(function () {
+            return {
+                blurred
+            };
+        });
+    }
+
+    handleBlur() {
+        this.setState(function () {
+            return {
+                blurred: true
+            };
+        });
+    }
+
+    handleClick(event) {
+        event.preventDefault();
+
+        this.setState({
+            newKeyCode: null,
+            previousKeyCode: ''
+        });
     }
 
     handleKeyDown(event) {
@@ -46,15 +82,6 @@ class App extends React.Component {
         });
     }
 
-    handleClick(event) {
-        event.preventDefault();
-
-        this.setState({
-            newKeyCode: null,
-            previousKeyCode: ''
-        });
-    }
-
     render() {
         const { newKeyCode } = this.state;
 
@@ -67,7 +94,7 @@ class App extends React.Component {
         return (
             // tabindex="0" allows elements besides links and form elements to receive keyboard focus.
             // See http://webaim.org/techniques/keyboard/tabindex for more information.
-            <div className="app" tabIndex="0" onKeyDown={ this.handleKeyDown } ref={ appDOMNode => { this.appDOMNode = appDOMNode; } }>
+            <div className="app" id={ this.state.id } tabIndex="0" onBlur={ this.handleBlur } onKeyDown={ this.handleKeyDown } ref={ appDOMNode => { this.appDOMNode = appDOMNode; } }>
                 { conditionallyRenderKeyCode() }
             </div>
         );

@@ -8,6 +8,8 @@ describe('App Main Container', () => {
 
     beforeEach(() => {
         defaultState = {
+            blurred: true,
+            id: 'app',
             newKeyCode: null,
             previousKeyCode: ''
         };
@@ -25,6 +27,7 @@ describe('App Main Container', () => {
 
         it('should mount in a full DOM', () => {
             const wrapper = mount(<App />);
+
             expect(wrapper.find('.app').length).toBe(1);
             expect(wrapper.find('.key-code')).toHaveLength(0);
         });
@@ -35,8 +38,8 @@ describe('App Main Container', () => {
     });
 
     describe('Default state', () => {
-        it('should have no previous and new key code as default', () => {
-            expect(shallow(<App />).state()).toEqual(defaultState);
+        it('should have blurred set to false when mounted', () => {
+            expect(mount(<App />).state()).toEqual({ ...defaultState, blurred: false });
         });
     });
 
@@ -44,6 +47,7 @@ describe('App Main Container', () => {
         it('shouldn\'t render "Press something in your keyboard" with keyCode provided', () => {
             const newState = {
                 ...defaultState,
+                blurred: false,
                 newKeyCode: 188
             };
 
@@ -52,13 +56,20 @@ describe('App Main Container', () => {
     });
 
     describe('Simulation', () => {
+        it('#blur: should have blurred set to false after a blur event occurs', () => {
+            const wrapper = mount(<App />);
+            const newState = { ...defaultState, blurred: false };
+
+            expect(mount(<App />).state()).toEqual(newState);
+            wrapper.find('.app').simulate('blur');
+            expect(mount(<App />).state()).toEqual(newState);
+        });
+
         it('#keyDown: should remove default message when a key is pressed', () => {
             const wrapper = mount(<App />);
 
             expect(wrapper.find('.press-something')).toHaveLength(1);
-
             wrapper.find('.app').simulate('keyDown', { keyCode: 9, which: 9 });
-
             expect(wrapper.find('.press-something')).toHaveLength(0);
         });
     });
