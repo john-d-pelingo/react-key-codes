@@ -1,5 +1,6 @@
 [![travis][travis-badge]][travis-url]
 <!-- [![CircleCI][circle-ci-badge]][circle-ci-url] -->
+[![dependency-ci][dependency-ci-badge]][dependency-ci-url]
 
 # react-key-codes
 
@@ -112,3 +113,5 @@ feature. However we understand that this tool wouldn’t be useful if you couldn
 [travis-url]: https://travis-ci.org/john-d-pelingo/react-key-codes
 [circle-ci-badge]: https://circleci.com/gh/john-d-pelingo/react-key-codes.svg?style=shield
 [circle-ci-url]: https://circleci.com/gh/john-d-pelingo/react-key-codes
+[dependency-ci-badge]: https://dependencyci.com/github/john-d-pelingo/react-key-codes/badge
+[dependency-ci-url]: https://dependencyci.com/github/john-d-pelingo/react-key-codes
