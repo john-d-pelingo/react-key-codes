@@ -16,6 +16,7 @@
     "build:js": "react-scripts build",
     "clean": "rimraf build",
     "deploy": "gh-pages  -m 'Updates [ci skip]' -d build",
+    "deploy:ready": "gh-pages  -m 'Updates [ci skip]' -d build",
     "eject": "react-scripts eject",
     "lint": "eslint -c .eslintrc.yml *.js src",
     "predeploy": "npm run build",

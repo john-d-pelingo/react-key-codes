@@ -10,3 +10,13 @@ general:
 dependencies:
   pre:
     - rm -rf node_modules
+
+test:
+  override:
+    - npm run build
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - npm run deploy:ready
