@@ -1,22 +1,22 @@
-machine:
-  node:
-    version: 6
-
-general:
-  branches:
-    ignore:
-      - gh-pages
-
-dependencies:
-  pre:
-    - rm -rf node_modules
-
-test:
-  override:
-    - npm run build
-
-deployment:
-  production:
-    branch: master
-    commands:
-      - npm run deploy:ready
+#machine:
+#  node:
+#    version: 6
+#
+#general:
+#  branches:
+#    ignore:
+#      - gh-pages
+#
+#dependencies:
+#  pre:
+#    - rm -rf node_modules
+#
+#test:
+#  override:
+#    - npm run build
+#
+#deployment:
+#  production:
+#    branch: master
+#    commands:
+#      - npm run deploy:ready
