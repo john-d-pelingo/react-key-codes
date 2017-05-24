@@ -1,8 +1,8 @@
 # Good template: https://github.com/gruntjs/grunt/blob/master/appveyor.yml
 
 # Fix line endings on Windows
-init:
-  - git config --global core.autocrlf true
+#init:
+#  - git config --global core.autocrlf true
 
 # Test against the latest version of this Node.js version.
 environment:
