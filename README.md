@@ -1,5 +1,5 @@
-[![travis][travis-badge]][travis-url]
-<!-- [![CircleCI][circle-ci-badge]][circle-ci-url] -->
+[![travis-ci][travis-badge]][travis-url]
+[![circle-ci][circle-ci-badge]][circle-ci-url]
 [![dependency-ci][dependency-ci-badge]][dependency-ci-url]
 
 # react-key-codes

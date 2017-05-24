@@ -11,10 +11,11 @@
     "url": "https://github.com/john-d-pelingo/react-key-codes.git"
   },
   "scripts": {
-    "build": "npm run build:js",
+    "build": "run-s build:js copy-circle-ci-yml",
     "build:css": "node-sass --output-style expanded --indent-width 4 --linefeed lf --include-path scss src/views/styles/style.scss src/views/styles/style.css",
     "build:js": "react-scripts build",
     "clean": "rimraf build",
+    "copy-circle-ci-yml": "node scripts/copy-circle-ci-yml.js",
     "deploy": "gh-pages  -m 'Updates [ci skip]' -d build",
     "deploy:ready": "gh-pages  -m 'Updates [ci skip]' -d build",
     "eject": "react-scripts eject",
@@ -59,6 +60,7 @@
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-jsx-a11y": "5.0.3",
     "eslint-plugin-react": "7.0.1",
+    "fs-extra": "3.0.1",
     "gh-pages": "1.0.0",
     "node-sass": "4.5.3",
     "nodemon": "1.11.0",
