@@ -1,5 +1,4 @@
 // Template
-//@import "~sieses/dist/sieses.css";
 @import "~sieses/dist/parts/reset.css";
 @import "~sieses/dist/parts/elements.css";
 @import "~sieses/dist/parts/template.css";
@@ -13,7 +12,7 @@ html, body, #root {
 }
 
 body {
-    font-family : 'Raleway', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-family : Raleway, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 // Main App

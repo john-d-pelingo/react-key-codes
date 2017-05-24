@@ -21,7 +21,9 @@ class App extends React.Component {
 
         this.state = {
             blurred: false,
+            defaultDocumentTitle: 'React Key Codes',
             id: 'app',
+            newKey: '',
             newKeyCode: null,
             previousKeyCode: ''
         };
@@ -34,6 +36,14 @@ class App extends React.Component {
 
     componentDidMount() {
         this._setStateBlurred(false);
+    }
+
+    componentWillUpdate(nextProps, nextState) {
+        if (nextState.newKeyCode && nextState.newKey) {
+            document.title = `${ nextState.newKeyCode } : ${ nextState.newKey }`;
+        } else {
+            document.title = nextState.defaultDocumentTitle;
+        }
     }
 
     componentDidUpdate() {
@@ -62,6 +72,7 @@ class App extends React.Component {
     handleClick(event) {
         event.preventDefault();
 
+        // document.title = this.state.defaultDocumentTitle;
         this.setState({
             newKeyCode: null,
             previousKeyCode: ''
@@ -73,9 +84,16 @@ class App extends React.Component {
         // See https://fb.me/react-event-pooling for more information.
         event.persist();
 
+        if (!event.metaKey) {
+            event.preventDefault();
+        }
+
+        const newKeyCode = (typeof event.which === 'number') ? event.which : event.keyCode;
+
         this.setState(function (prevState) {
             return {
-                newKeyCode: 'which' in event ? event.which : event.keyCode,
+                newKey: KEY_CODES[newKeyCode] ? KEY_CODES[newKeyCode] : event.key.toLowerCase(),
+                newKeyCode,
                 // or event.which || event.keyCode || 0;
                 previousKeyCode: prevState.newKeyCode
             };
@@ -83,11 +101,11 @@ class App extends React.Component {
     }
 
     render() {
-        const { newKeyCode } = this.state;
+        const { newKey, newKeyCode } = this.state;
 
         const conditionallyRenderKeyCode = () => {
             return newKeyCode ?
-                (<KeyCode keyCode={ newKeyCode } keyText={ KEY_CODES[newKeyCode] ? KEY_CODES[newKeyCode] : '' } handleClick={ this.handleClick } />)
+                (<KeyCode keyCode={ newKeyCode } keyText={ newKey } handleClick={ this.handleClick } />)
                 : (<span className="press-something">Press something in your keyboard</span>);
         };
 
