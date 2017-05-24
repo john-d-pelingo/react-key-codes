@@ -37,6 +37,5 @@ branches:
 test_script:
   # Output useful info for debugging.
   - node --version && npm --version
-  # Run tests.
-  - ps: "npm run build # PowerShell" # Pass comment to PS for easier debugging
-  - cmd: npm run build
+  # Run all tests.
+  - npm run build
