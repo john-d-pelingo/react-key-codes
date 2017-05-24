@@ -1,6 +1,8 @@
 [![travis-ci][travis-badge]][travis-url]
 [![circle-ci][circle-ci-badge]][circle-ci-url]
+[![appveyor-ci][appveyor-ci-badge]][appveyor-ci-url]
 [![dependency-ci][dependency-ci-badge]][dependency-ci-url]
+[![coveralls][coveralls-badge]][coveralls-url]
 
 # react-key-codes
 
@@ -113,5 +115,9 @@ feature. However we understand that this tool wouldn’t be useful if you couldn
 [travis-url]: https://travis-ci.org/john-d-pelingo/react-key-codes
 [circle-ci-badge]: https://circleci.com/gh/john-d-pelingo/react-key-codes.svg?style=shield
 [circle-ci-url]: https://circleci.com/gh/john-d-pelingo/react-key-codes
+[appveyor-ci-badge]: https://ci.appveyor.com/api/projects/status/cfvhnwnvn7rfb5li?svg=true
+[appveyor-ci-url]: https://ci.appveyor.com/project/john-d-pelingo/react-key-codes
 [dependency-ci-badge]: https://dependencyci.com/github/john-d-pelingo/react-key-codes/badge
 [dependency-ci-url]: https://dependencyci.com/github/john-d-pelingo/react-key-codes
+[coveralls-badge]: https://coveralls.io/repos/github/john-d-pelingo/react-key-codes/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/github/john-d-pelingo/react-key-codes?branch=master

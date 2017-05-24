@@ -11,7 +11,8 @@
     "url": "https://github.com/john-d-pelingo/react-key-codes.git"
   },
   "scripts": {
-    "build": "run-s build:js copy-circle-ci-yml",
+    "build": "run-s build:js",
+    "build:coverage": "run-s build:js copy-circle-ci-yml",
     "build:css": "node-sass --output-style expanded --indent-width 4 --linefeed lf --include-path scss src/views/styles/style.scss src/views/styles/style.css",
     "build:js": "react-scripts build",
     "clean": "rimraf build",
@@ -22,10 +23,12 @@
     "lint": "eslint -c .eslintrc.yml *.js src",
     "predeploy": "npm run build",
     "prebuild": "run-s build:css clean lint test:deploy",
+    "prebuild:coverage": "run-s build:css clean lint test:coverage",
     "start": "run-p watch:css start:js",
     "start:js": "react-scripts start",
     "test": "react-scripts test --env=jsdom",
     "test:deploy": "cross-env CI=true react-scripts test --env=jsdom",
+    "test:coverage": "cross-env CI=true react-scripts test --env=jsdom --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "watch:css": "nodemon -e scss -x \"npm run build:css\""
   },
   "keywords": [
@@ -53,6 +56,7 @@
     "sieses": "0.1.4"
   },
   "devDependencies": {
+    "coveralls": "2.13.1",
     "cross-env": "5.0.0",
     "enzyme": "2.8.2",
     "eslint": "3.19.0",
