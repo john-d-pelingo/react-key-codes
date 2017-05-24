@@ -18,10 +18,13 @@ Try the demo at [https://john-d-pelingo.github.io/react-key-codes/](https://john
 
 ## Development Stack
 
+- [x] coveralls
 - [x] cross-env
 - [x] eslint
+- [x] fs-extra
 - [x] gh-pages
 - [x] node-sass
+- [x] nodemon
 - [x] npm-run-all
 - [x] rimraf
 
@@ -29,6 +32,7 @@ Try the demo at [https://john-d-pelingo.github.io/react-key-codes/](https://john
 
 - [x] enzyme
 - [x] jest
+- [x] react-test-renderer
 
 Alongside pure JavaScript.
 
