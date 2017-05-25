@@ -3,6 +3,7 @@
 [![appveyor-ci][appveyor-ci-badge]][appveyor-ci-url]
 [![dependency-ci][dependency-ci-badge]][dependency-ci-url]
 [![coveralls][coveralls-badge]][coveralls-url]
+[![mit-license][mit-license-badge]][mit-license-url]
 
 # react-key-codes
 
@@ -58,7 +59,7 @@ In the project directory, you can run:
 
 ```sh
 $ npm start
-````
+```
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -68,7 +69,7 @@ You will also see any lint errors in the console.
 
 ```sh
 $ npm test
-````
+```
 
 Launches the test runner in the interactive watch mode.<br>
 See the section about [running tests](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#running-tests) 
@@ -76,7 +77,7 @@ for more information.
 
 ```sh
 $ npm run build
-````
+```
 
 Builds the app for production to the `build` folder.<br>
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -89,7 +90,7 @@ for more information.
 
 ```sh
 $ npm run eject
-````
+```
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
@@ -125,3 +126,5 @@ feature. However we understand that this tool wouldn’t be useful if you couldn
 [dependency-ci-url]: https://dependencyci.com/github/john-d-pelingo/react-key-codes
 [coveralls-badge]: https://coveralls.io/repos/github/john-d-pelingo/react-key-codes/badge.svg
 [coveralls-url]: https://coveralls.io/github/john-d-pelingo/react-key-codes
+[mit-license-badge]: https://img.shields.io/github/license/mashape/apistatus.svg
+[mit-license-url]: https://github.com/john-d-pelingo/react-key-codes/blob/master/LICENSE
