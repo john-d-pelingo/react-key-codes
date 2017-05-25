@@ -1,6 +1,6 @@
 {
   "name": "react-key-codes",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Reveal the JavaScript key codes on key down. Built with react and friends. Bootstrapped with the help of Facebook's create-react-app.",
   "private": false,
   "homepage": "https://john-d-pelingo.github.io/react-key-codes",
@@ -21,9 +21,9 @@
     "deploy:ready": "gh-pages  -m 'Updates [ci skip]' -d build",
     "eject": "react-scripts eject",
     "lint": "eslint -c .eslintrc.yml *.js src",
-    "predeploy": "npm run build",
     "prebuild": "run-s build:css clean lint test:deploy",
     "prebuild:coverage": "run-s build:css clean lint test:coverage",
+    "predeploy": "npm run build",
     "start": "run-p watch:css start:js",
     "start:js": "react-scripts start",
     "test": "react-scripts test --env=jsdom",
@@ -32,21 +32,15 @@
     "watch:css": "nodemon -e scss -x \"npm run build:css\""
   },
   "keywords": [
-    "airbnb-javascript",
     "create-react-app",
-    "css",
+    "ci",
+    "enzyme",
     "es6",
     "eslint",
-    "eslint-config",
-    "gh-pages",
-    "html",
+    "jest",
     "jsx",
-    "prop-types",
     "react",
-    "react-dom",
-    "react-ga",
-    "react-scripts",
-    "redux-devtools-extension"
+    "scss"
   ],
   "dependencies": {
     "prop-types": "15.5.10",
@@ -75,10 +69,9 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/**/*.{js,jsx}",
-      "!src/index.js",
-      "!src/registerServiceWorker.js",
-      "!src/setupTests.js",
+      "src/**/*.js",
+      "!src/*.js",
+      "!src/core/*.js",
       "!src/utils/index.js",
       "!<rootDir>/node_modules/"
     ]
