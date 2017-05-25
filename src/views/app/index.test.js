@@ -77,7 +77,8 @@ describe('App Main Container', () => {
                 ...defaultState,
                 newKey: 'Tab',
                 newKeyCode: 9,
-                blurred: false };
+                blurred: false
+            };
 
             expect(wrapper.setState(newState).find('.press-something')).toHaveLength(0);
             wrapper.find('.app .key-code-text').simulate('click');
@@ -85,11 +86,41 @@ describe('App Main Container', () => {
         });
 
         it('#keyDown: should remove default message when a key is pressed', () => {
-            const wrapper = mount(<App />);
+            describe('tab key', () => {
+                const wrapper = mount(<App />);
 
-            expect(wrapper.find('.press-something')).toHaveLength(1);
-            wrapper.find('.app').simulate('keyDown', { key: 'Tab', keyCode: 9, which: 9 });
-            expect(wrapper.find('.press-something')).toHaveLength(0);
+                expect(wrapper.find('.press-something')).toHaveLength(1);
+                wrapper.find('.app').simulate('keyDown', { key: 'Tab', keyCode: 9, metaKey: true, which: 9 });
+                expect(wrapper.find('.press-something')).toHaveLength(0);
+            });
+
+            describe('0 key', () => {
+                describe('which', () => {
+                    const wrapper = mount(<App />);
+
+                    expect(wrapper.find('.press-something')).toHaveLength(1);
+                    wrapper.find('.app').simulate('keyDown', { key: '0', metaKey: false, which: 48 });
+                    expect(wrapper.find('.press-something')).toHaveLength(0);
+                });
+
+                describe('keyCode', () => {
+                    const wrapper = mount(<App />);
+
+                    expect(wrapper.find('.press-something')).toHaveLength(1);
+                    wrapper.find('.app').simulate('keyDown', { key: '0', keyCode: 48, metaKey: false });
+                    expect(wrapper.find('.press-something')).toHaveLength(0);
+                });
+            });
+
+            describe('f19', () => {
+                describe('which', () => {
+                    const wrapper = mount(<App />);
+
+                    expect(wrapper.find('.press-something')).toHaveLength(1);
+                    wrapper.find('.app').simulate('keyDown', { key: 'F13', keyCode: 130, metaKey: false, which: 130 });
+                    expect(wrapper.find('.press-something')).toHaveLength(0);
+                });
+            });
         });
     });
 });

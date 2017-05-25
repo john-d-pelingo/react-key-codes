@@ -10,6 +10,7 @@ class App extends React.Component {
     constructor(props) {
         super(props);
 
+        /* istanbul ignore next */
         if (process.env.NODE_ENV !== 'test') {
             // eslint-disable-next-line global-require
             const ReactGA = require('react-ga');

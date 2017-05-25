@@ -79,6 +79,7 @@
       "!src/index.js",
       "!src/registerServiceWorker.js",
       "!src/setupTests.js",
+      "!src/utils/index.js",
       "!<rootDir>/node_modules/"
     ]
   }
