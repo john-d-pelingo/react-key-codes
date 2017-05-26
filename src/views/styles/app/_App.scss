@@ -1,14 +1,14 @@
 .app {
-    display    : table;
-    height     : 100%;
-    margin     : 0 auto;
-    text-align : center;
-    width      : 100%;
+  display    : table;
+  height     : 100%;
+  margin     : 0 auto;
+  text-align : center;
+  width      : 100%;
 
-    .press-something {
-        display        : table-cell;
-        font-size      : 50px;
-        line-height    : 55px;
-        vertical-align : middle;
-    }
+  .press-something {
+    display        : table-cell;
+    font-size      : 50px;
+    line-height    : 55px;
+    vertical-align : middle;
+  }
 }

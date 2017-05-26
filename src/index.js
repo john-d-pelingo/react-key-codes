@@ -14,13 +14,13 @@ import registerServiceWorker from './registerServiceWorker';
 const uAVO = navigator.userAgent || navigator.vendor || window.opera;
 
 function conditionallyRenderApp() {
-    return isMobile(uAVO) ? (<MobilePop />) : (<App />);
+  return isMobile(uAVO) ? (<MobilePop />) : (<App />);
 }
 
 // TODO: JS Meta Keys (CMD of MacOS).
 ReactDOM.render(
-    conditionallyRenderApp(),
-    document.getElementById('root')
+  conditionallyRenderApp(),
+  document.getElementById('root')
 );
 
 registerServiceWorker();
