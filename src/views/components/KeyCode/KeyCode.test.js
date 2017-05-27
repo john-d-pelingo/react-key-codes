@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import KEY_CODES from '../../../core/constants';
 
-import KeyCode from './index';
+import KeyCode from './KeyCode';
 
 describe('KeyCode Component', () => {
   let defaultProps;

@@ -2,9 +2,9 @@
 
 import React from 'react';
 
-import { KeyCode } from '../components';
+import { KeyCode } from 'components';
 
-import KEY_CODES from '../../core/constants';
+import KEY_CODES from 'constants';
 
 class App extends React.Component {
   constructor(props) {

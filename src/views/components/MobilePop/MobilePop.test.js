@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import MobilePop from './index';
+import MobilePop from './MobilePop';
 
 describe('MobilePop Component', () => {
   describe('Default suite', () => {

@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { isMobile } from './utils';
+import { isMobile } from 'utils';
 
-import App from './views/app';
-import { MobilePop } from './views/components';
+import App from 'app';
+import { MobilePop } from 'components';
 
 // Styles.
-import './views/styles/style.css';
+import 'scss/style.css';
 
 import registerServiceWorker from './registerServiceWorker';
 
