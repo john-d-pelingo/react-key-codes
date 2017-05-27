@@ -2,9 +2,9 @@
 
 import React from 'react';
 
-import { KeyCode } from 'components';
+import { KeyCode } from 'views/components';
 
-import KEY_CODES from 'constants';
+import KEY_CODES from 'core/constants';
 
 class App extends React.Component {
   constructor(props) {
@@ -90,7 +90,6 @@ class App extends React.Component {
     }
 
     const newKeyCode = (typeof event.which === 'number') ? event.which : event.keyCode;
-
     this.setState(function (prevState) {
       return {
         newKey: KEY_CODES[newKeyCode] ? KEY_CODES[newKeyCode] : event.key.toLowerCase(),

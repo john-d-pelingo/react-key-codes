@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import KEY_CODES from '../../../core/constants';
+import KEY_CODES from 'core/constants';
 
 import KeyCode from './KeyCode';
 
