@@ -7,7 +7,7 @@ import App from 'views/app';
 import { MobilePop } from 'views/components';
 
 // Styles
-import 'views/scss/style.css';
+import 'static/scss/style.css';
 
 import registerServiceWorker from './registerServiceWorker';
 

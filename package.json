@@ -13,7 +13,7 @@
   "scripts": {
     "build": "run-s build:js",
     "build:coverage": "run-s build:js copy-circle-ci-yml",
-    "build:css": "node-sass --output-style expanded --indent-width 4 --linefeed lf --include-path scss src/views/scss/style.scss src/views/scss/style.css",
+    "build:css": "node-sass --output-style expanded --indent-width 4 --linefeed lf --include-path scss src/static/scss/style.scss src/static/scss/style.css",
     "build:js": "cross-env NODE_PATH=src react-scripts build",
     "clean": "rimraf build coverage",
     "copy-circle-ci-yml": "node scripts/copy-circle-ci-yml.js",
