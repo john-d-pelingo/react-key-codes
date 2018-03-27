@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex, jsx-a11y/no-static-element-interactions */
-
 import React from 'react';
+import { css } from 'emotion';
 
-import { KeyCode } from 'views/components';
+import { KEY_CODES } from 'src/constants';
 
-import KEY_CODES from 'core/constants';
+import KeyCode from './key-code';
 
 class App extends React.Component {
   constructor(props) {
@@ -41,7 +41,7 @@ class App extends React.Component {
 
   componentWillUpdate(nextProps, nextState) {
     if (nextState.newKeyCode && nextState.newKey) {
-      document.title = `${ nextState.newKeyCode } : ${ nextState.newKey }`;
+      document.title = `${nextState.newKeyCode} : ${nextState.newKey}`;
     } else {
       document.title = nextState.defaultDocumentTitle;
     }
@@ -55,7 +55,7 @@ class App extends React.Component {
 
   _setStateBlurred(blurred = false) {
     this.appDOMNode.focus();
-    return this.setState(function () {
+    return this.setState(function() {
       return {
         blurred
       };
@@ -63,7 +63,7 @@ class App extends React.Component {
   }
 
   handleBlur() {
-    this.setState(function () {
+    this.setState(function() {
       return {
         blurred: true
       };
@@ -89,10 +89,13 @@ class App extends React.Component {
       event.preventDefault();
     }
 
-    const newKeyCode = (typeof event.which === 'number') ? event.which : event.keyCode;
-    this.setState(function (prevState) {
+    const newKeyCode =
+      typeof event.which === 'number' ? event.which : event.keyCode;
+    this.setState(function(prevState) {
       return {
-        newKey: KEY_CODES[newKeyCode] ? KEY_CODES[newKeyCode] : event.key.toLowerCase(),
+        newKey: KEY_CODES[newKeyCode]
+          ? KEY_CODES[newKeyCode]
+          : event.key.toLowerCase(),
         newKeyCode,
         // or event.which || event.keyCode || 0;
         previousKeyCode: prevState.newKeyCode
@@ -104,19 +107,55 @@ class App extends React.Component {
     const { newKey, newKeyCode } = this.state;
 
     const conditionallyRenderKeyCode = () => {
-      return newKeyCode ?
-        (<KeyCode keyCode={ newKeyCode } keyText={ newKey } handleClick={ this.handleClick } />)
-        : (<span className="press-something">Press something in your keyboard</span>);
+      return newKeyCode ? (
+        <KeyCode
+          keyCode={newKeyCode}
+          keyText={newKey}
+          handleClick={this.handleClick}
+        />
+      ) : (
+        <span className="press-something">
+          Press something in your keyboard
+        </span>
+      );
     };
 
     return (
       // tabindex="0" allows elements besides links and form elements to receive keyboard focus.
       // See http://webaim.org/techniques/keyboard/tabindex for more information.
-      <div className="app" id={ this.state.id } tabIndex="0" onBlur={ this.handleBlur } onKeyDown={ this.handleKeyDown } ref={ appDOMNode => { this.appDOMNode = appDOMNode; } }>
-        { conditionallyRenderKeyCode() }
+      <div
+        className={app}
+        id={this.state.id}
+        tabIndex="0"
+        onBlur={this.handleBlur}
+        onKeyDown={this.handleKeyDown}
+        ref={appDOMNode => {
+          this.appDOMNode = appDOMNode;
+        }}
+      >
+        {conditionallyRenderKeyCode()}
       </div>
     );
   }
 }
+
+// -------
+// STYLING
+// -------
+
+const app = css`
+  display: table;
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+
+  .press-something {
+    display: table-cell;
+    font-size: 50px;
+    line-height: 55px;
+    vertical-align: middle;
+  }
+`;
 
 export default App;

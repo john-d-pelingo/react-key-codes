@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './App';
+import App from '../app';
 
 describe('App Main Container', () => {
   let defaultState;
@@ -23,8 +23,14 @@ describe('App Main Container', () => {
       ReactDOM.render(<App />, div);
     });
 
-    it('should render without throwing an error', function () {
-      expect(shallow(<App />).contains(<span className="press-something">Press something in your keyboard</span>)).toBe(true);
+    it('should render without throwing an error', function() {
+      expect(
+        shallow(<App />).contains(
+          <span className="press-something">
+            Press something in your keyboard
+          </span>
+        )
+      ).toBe(true);
     });
 
     it('should be selectable by class ".app"', () => {
@@ -39,13 +45,18 @@ describe('App Main Container', () => {
     });
 
     it('should render "Press something in your keyboard" with no keyCode provided', () => {
-      expect(render(<App />).text()).toEqual('Press something in your keyboard');
+      expect(render(<App />).text()).toEqual(
+        'Press something in your keyboard'
+      );
     });
   });
 
   describe('Default state', () => {
     it('should have blurred set to false when mounted', () => {
-      expect(mount(<App />).state()).toEqual({ ...defaultState, blurred: false });
+      expect(mount(<App />).state()).toEqual({
+        ...defaultState,
+        blurred: false
+      });
     });
   });
 
@@ -57,7 +68,11 @@ describe('App Main Container', () => {
         newKeyCode: 188
       };
 
-      expect(shallow(<App />).setState(newState).text()).toContain('KeyCode');
+      expect(
+        shallow(<App />)
+          .setState(newState)
+          .text()
+      ).toContain('KeyCode');
     });
   });
 
@@ -80,7 +95,9 @@ describe('App Main Container', () => {
         blurred: false
       };
 
-      expect(wrapper.setState(newState).find('.press-something')).toHaveLength(0);
+      expect(wrapper.setState(newState).find('.press-something')).toHaveLength(
+        0
+      );
       wrapper.find('.app .key-code-text').simulate('click');
       expect(wrapper.find('.press-something')).toHaveLength(1);
     });
@@ -90,7 +107,12 @@ describe('App Main Container', () => {
         const wrapper = mount(<App />);
 
         expect(wrapper.find('.press-something')).toHaveLength(1);
-        wrapper.find('.app').simulate('keyDown', { key: 'Tab', keyCode: 9, metaKey: true, which: 9 });
+        wrapper.find('.app').simulate('keyDown', {
+          key: 'Tab',
+          keyCode: 9,
+          metaKey: true,
+          which: 9
+        });
         expect(wrapper.find('.press-something')).toHaveLength(0);
       });
 
@@ -99,7 +121,9 @@ describe('App Main Container', () => {
           const wrapper = mount(<App />);
 
           expect(wrapper.find('.press-something')).toHaveLength(1);
-          wrapper.find('.app').simulate('keyDown', { key: '0', metaKey: false, which: 48 });
+          wrapper
+            .find('.app')
+            .simulate('keyDown', { key: '0', metaKey: false, which: 48 });
           expect(wrapper.find('.press-something')).toHaveLength(0);
         });
 
@@ -107,7 +131,9 @@ describe('App Main Container', () => {
           const wrapper = mount(<App />);
 
           expect(wrapper.find('.press-something')).toHaveLength(1);
-          wrapper.find('.app').simulate('keyDown', { key: '0', keyCode: 48, metaKey: false });
+          wrapper
+            .find('.app')
+            .simulate('keyDown', { key: '0', keyCode: 48, metaKey: false });
           expect(wrapper.find('.press-something')).toHaveLength(0);
         });
       });
@@ -117,7 +143,12 @@ describe('App Main Container', () => {
           const wrapper = mount(<App />);
 
           expect(wrapper.find('.press-something')).toHaveLength(1);
-          wrapper.find('.app').simulate('keyDown', { key: 'F13', keyCode: 130, metaKey: false, which: 130 });
+          wrapper.find('.app').simulate('keyDown', {
+            key: 'F13',
+            keyCode: 130,
+            metaKey: false,
+            which: 130
+          });
           expect(wrapper.find('.press-something')).toHaveLength(0);
         });
       });

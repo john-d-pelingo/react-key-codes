@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import MobilePop from './MobilePop';
+import MobilePop from '../mobile-pop';
 
 describe('MobilePop Component', () => {
   describe('Default suite', () => {
@@ -11,13 +11,16 @@ describe('MobilePop Component', () => {
     });
 
     it('should render without throwing an error', () => {
-      expect(shallow(<MobilePop />).contains(
-        <div className="mobile-pop">
-          <span className="hello-it-seems">
-            Hello! <br />It seems like you are browsing this webpage without a keyboard or a mouse. <br />Better luck next time!
-          </span>
-        </div>
-      )).toBe(true);
+      expect(
+        shallow(<MobilePop />).contains(
+          <div className="mobile-pop">
+            <span className="hello-it-seems">
+              Hello! <br />It seems like you are browsing this webpage without a
+              keyboard or a mouse. <br />Better luck next time!
+            </span>
+          </div>
+        )
+      ).toBe(true);
     });
 
     it('should be selectable by class ".mobile-pop"', () => {
@@ -29,9 +32,9 @@ describe('MobilePop Component', () => {
     });
 
     it('should render to static HTML', () => {
-      expect(render(
-        <MobilePop />).text()
-      ).toBe('Hello! It seems like you are browsing this webpage without a keyboard or a mouse. Better luck next time!');
+      expect(render(<MobilePop />).text()).toBe(
+        'Hello! It seems like you are browsing this webpage without a keyboard or a mouse. Better luck next time!'
+      );
     });
   });
 });
