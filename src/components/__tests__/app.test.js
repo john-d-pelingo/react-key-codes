@@ -17,7 +17,7 @@ describe('App Main Container', () => {
     };
   });
 
-  describe('Default suite', () => {
+  describe.skip('Default suite', () => {
     it('should render without crashing', () => {
       const div = document.createElement('div');
       ReactDOM.render(<App />, div);

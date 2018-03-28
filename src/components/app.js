@@ -1,8 +1,8 @@
-/* eslint-disable jsx-a11y/no-noninteractive-tabindex, jsx-a11y/no-static-element-interactions */
+/* eslint-disable react/no-did-update-set-state,jsx-a11y/no-static-element-interactions,jsx-a11y/no-noninteractive-tabindex */
 import React from 'react';
 import { css } from 'emotion';
 
-import { KEY_CODES } from 'src/constants';
+import { KEY_CODES, PAGE_TITLE } from 'src/constants';
 
 import KeyCode from './key-code';
 
@@ -19,68 +19,53 @@ class App extends React.Component {
       // This just needs to be called once since we have no routes in this case.
       ReactGA.pageview(window.location.pathname);
     }
-
-    this.state = {
-      blurred: false,
-      defaultDocumentTitle: 'React Key Codes',
-      id: 'app',
-      newKey: '',
-      newKeyCode: null,
-      previousKeyCode: ''
-    };
-
-    // this._setStateBlurred = this._setStateBlurred.bind(this);
-    this.handleBlur = this.handleBlur.bind(this);
-    this.handleClick = this.handleClick.bind(this);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
+  state = {
+    blurred: false,
+    newKey: '',
+    newKeyCode: null
+  };
+
   componentDidMount() {
-    this._setStateBlurred(false);
+    // Focus the DOM element
+    this.appDOMNode.focus();
   }
 
   componentWillUpdate(nextProps, nextState) {
     if (nextState.newKeyCode && nextState.newKey) {
       document.title = `${nextState.newKeyCode} : ${nextState.newKey}`;
-    } else {
-      document.title = nextState.defaultDocumentTitle;
     }
   }
 
   componentDidUpdate() {
     if (this.state.blurred === true) {
-      this._setStateBlurred(false);
+      this.setState({
+        blurred: false
+      });
     }
   }
 
-  _setStateBlurred(blurred = false) {
-    this.appDOMNode.focus();
-    return this.setState(function() {
-      return {
-        blurred
-      };
+  handleBlur = () => {
+    this.setState({
+      blurred: true
     });
-  }
+  };
 
-  handleBlur() {
-    this.setState(function() {
-      return {
-        blurred: true
-      };
-    });
-  }
-
-  handleClick(event) {
+  handleClick = event => {
     event.preventDefault();
 
-    // document.title = this.state.defaultDocumentTitle;
-    this.setState({
-      newKeyCode: null,
-      previousKeyCode: ''
-    });
-  }
+    this.setState(
+      {
+        newKeyCode: null
+      },
+      () => {
+        document.title = PAGE_TITLE;
+      }
+    );
+  };
 
-  handleKeyDown(event) {
+  handleKeyDown = event => {
     // Keep the original synthetic event around.
     // See https://fb.me/react-event-pooling for more information.
     event.persist();
@@ -91,17 +76,14 @@ class App extends React.Component {
 
     const newKeyCode =
       typeof event.which === 'number' ? event.which : event.keyCode;
-    this.setState(function(prevState) {
-      return {
-        newKey: KEY_CODES[newKeyCode]
-          ? KEY_CODES[newKeyCode]
-          : event.key.toLowerCase(),
-        newKeyCode,
-        // or event.which || event.keyCode || 0;
-        previousKeyCode: prevState.newKeyCode
-      };
+    this.setState({
+      newKey: KEY_CODES[newKeyCode]
+        ? KEY_CODES[newKeyCode]
+        : event.key.toLowerCase(),
+      newKeyCode
+      // or event.which || event.keyCode || 0;
     });
-  }
+  };
 
   render() {
     const { newKey, newKeyCode } = this.state;
@@ -121,11 +103,10 @@ class App extends React.Component {
     };
 
     return (
-      // tabindex="0" allows elements besides links and form elements to receive keyboard focus.
-      // See http://webaim.org/techniques/keyboard/tabindex for more information.
+      // tabindex="0" allows elements besides links and form elements to receive keyboard focus
+      // See http://webaim.org/techniques/keyboard/tabindex for more information
       <div
         className={app}
-        id={this.state.id}
         tabIndex="0"
         onBlur={this.handleBlur}
         onKeyDown={this.handleKeyDown}
