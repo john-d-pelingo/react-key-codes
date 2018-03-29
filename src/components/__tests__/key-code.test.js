@@ -1,75 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-
-import { KEY_CODES } from 'src/constants';
 
 import KeyCode from '../key-code';
 
-describe('KeyCode Component', () => {
-  let defaultProps;
-
-  beforeEach(() => {
-    defaultProps = {
+describe(`${KeyCode.name} Component`, () => {
+  it('should with correct styles', () => {
+    const defaultProps = {
       keyCode: null,
       keyText: '',
       handleClick: () => {}
     };
-  });
 
-  describe('Default props', () => {
-    it('should render without crashing', () => {
-      const div = document.createElement('div');
-      ReactDOM.render(<KeyCode {...defaultProps} />, div);
-    });
+    const snap = mount(<KeyCode {...defaultProps} />);
+    const snapJson = enzymeToJson(snap);
 
-    it('should render without throwing an error', () => {
-      expect(
-        shallow(<KeyCode {...defaultProps} />).contains(
-          <span className="key-code-code" />
-        )
-      ).toBe(true);
-    });
-
-    it('should be selectable by class ".key-code"', () => {
-      expect(shallow(<KeyCode {...defaultProps} />).is('.key-code')).toBe(true);
-    });
-
-    it('should mount in a full DOM', () => {
-      expect(
-        mount(<KeyCode {...defaultProps} />).find('.key-code').length
-      ).toBe(1);
-    });
-
-    it('should render "What key code is that?" when no keyCode or keyText is provided', () => {
-      expect(render(<KeyCode {...defaultProps} />).text()).toEqual(
-        'What key code is that?'
-      );
-    });
-  });
-
-  describe('New props', () => {
-    function shouldRenderTextWithTheKeyCode(keyCode, keyText) {
-      it(
-        'should render ' + keyText + ' with the keyCode "' + keyCode + '"',
-        () => {
-          const newProps = {
-            ...defaultProps,
-            keyCode,
-            keyText
-          };
-          expect(render(<KeyCode {...newProps} />).text()).toEqual(
-            keyCode + '' + keyText
-          );
-        }
-      );
-    }
-
-    const keyCodesKeys = Object.keys(KEY_CODES);
-    for (let ii = 0; ii < keyCodesKeys.length; ii++) {
-      shouldRenderTextWithTheKeyCode(
-        parseInt(keyCodesKeys[ii], 10),
-        KEY_CODES[keyCodesKeys[ii]]
-      );
-    }
+    expect(snapJson).toMatchSnapshot();
   });
 });

@@ -76,6 +76,7 @@ class App extends React.Component {
 
     const newKeyCode =
       typeof event.which === 'number' ? event.which : event.keyCode;
+
     this.setState({
       newKey: KEY_CODES[newKeyCode]
         ? KEY_CODES[newKeyCode]
@@ -87,20 +88,6 @@ class App extends React.Component {
 
   render() {
     const { newKey, newKeyCode } = this.state;
-
-    const conditionallyRenderKeyCode = () => {
-      return newKeyCode ? (
-        <KeyCode
-          keyCode={newKeyCode}
-          keyText={newKey}
-          handleClick={this.handleClick}
-        />
-      ) : (
-        <span className="press-something">
-          Press something in your keyboard
-        </span>
-      );
-    };
 
     return (
       // tabindex="0" allows elements besides links and form elements to receive keyboard focus
@@ -114,7 +101,17 @@ class App extends React.Component {
           this.appDOMNode = appDOMNode;
         }}
       >
-        {conditionallyRenderKeyCode()}
+        {newKeyCode ? (
+          <KeyCode
+            keyCode={newKeyCode}
+            keyText={newKey}
+            handleClick={this.handleClick}
+          />
+        ) : (
+          <span className="press-something">
+            Press something in your keyboard
+          </span>
+        )}
       </div>
     );
   }

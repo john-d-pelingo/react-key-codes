@@ -6,6 +6,9 @@ import Enzyme, { shallow, render, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 // Generate snapshots using Enzyme's shallow or full DOM rendering
 import enzymeToJson from 'enzyme-to-json';
+// Set up emotion serializer
+import * as emotion from 'emotion';
+import { createSerializer } from 'jest-emotion';
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -18,3 +21,20 @@ global.shallow = shallow;
 console.error = message => {
   throw new Error(message);
 };
+
+expect.addSnapshotSerializer(
+  createSerializer(
+    emotion
+    // Default
+    // function classNameReplacer(className, index) {
+    //   return `emotion-${index}`
+    // }
+    //
+    // Override
+    // {
+    //   classNameReplacer(className, index) {
+    //     return `my-new-class-name-${index}`;
+    //   }
+    // }
+  )
+);
