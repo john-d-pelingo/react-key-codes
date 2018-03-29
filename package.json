@@ -15,7 +15,7 @@
   },
   "scripts": {
     "build": "cross-env react-scripts build",
-    "build:ci": "run-s build",
+    "build:ci": "cross-env react-scripts build",
     "deploy": "run-s build deploy:gh",
     "eject": "cross-env react-scripts eject",
     "lint": "eslint .",
@@ -68,8 +68,8 @@
   "dependencies": {
     "emotion": "9.1.0",
     "prop-types": "15.6.1",
-    "react": "16.2.0",
-    "react-dom": "16.2.0",
+    "react": "16.3.0",
+    "react-dom": "16.3.0",
     "react-emotion": "9.1.0",
     "react-ga": "2.4.1",
     "sieses": "0.1.4"
@@ -94,7 +94,7 @@
     "npm-run-all": "^4.1.2",
     "prettier": "^1.9.2",
     "react-scripts": "1.1.1",
-    "react-test-renderer": "^16.2.0",
+    "react-test-renderer": "^16.3.0",
     "rimraf": "^2.6.2",
     "serve": "^6.4.4"
   },
