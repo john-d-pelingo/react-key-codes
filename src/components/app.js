@@ -1,8 +1,7 @@
-/* eslint-disable react/no-did-update-set-state,jsx-a11y/no-static-element-interactions,jsx-a11y/no-noninteractive-tabindex */
 import React from 'react';
 import { css } from 'emotion';
 
-import { KEY_CODES, PAGE_TITLE } from 'src/constants';
+import { KEY_CODES, PAGE_TITLE } from '../constants';
 
 import KeyCode from './key-code';
 

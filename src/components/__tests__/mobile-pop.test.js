@@ -2,7 +2,7 @@ import React from 'react';
 
 import MobilePop from '../mobile-pop';
 
-describe(`${MobilePop.name} Component`, () => {
+describe.skip(`${MobilePop.name} Component`, () => {
   it('should with correct styles', () => {
     const snap = mount(<MobilePop />);
     const snapJson = enzymeToJson(snap);
