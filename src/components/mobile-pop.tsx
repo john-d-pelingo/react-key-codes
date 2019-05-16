@@ -1,14 +1,16 @@
-import React from 'react';
-import { css } from 'emotion';
+import React from 'react'
+import { css } from 'emotion'
 
-const MobilePop = () => (
+const MobilePop: React.FC = () => (
   <div className={mobilePop}>
     <span className="hello-it-seems">
-      Hello! <br />It seems like you are browsing this webpage without a
-      keyboard or a mouse. <br />Better luck next time!
+      Hello! <br />
+      It seems like you are browsing this webpage without a keyboard or a mouse.{' '}
+      <br />
+      Better luck next time!
     </span>
   </div>
-);
+)
 
 // -------
 // STYLING
@@ -28,6 +30,6 @@ const mobilePop = css`
     padding: 0 20px;
     vertical-align: middle;
   }
-`;
+`
 
-export default MobilePop;
+export default MobilePop

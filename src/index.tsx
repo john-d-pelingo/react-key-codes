@@ -1,5 +1,5 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import * as React from 'react'
+import * as ReactDOM from 'react-dom'
 import { injectGlobal } from 'emotion'
 
 import { App, MobilePop } from './components'
@@ -9,6 +9,8 @@ import * as serviceWorker from './serviceWorker'
 
 // Global Styles
 injectGlobal(BASE_STYLES)
+
+declare var window: ICustomWindow
 
 const uAVO = navigator.userAgent || navigator.vendor || window.opera
 

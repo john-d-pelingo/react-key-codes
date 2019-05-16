@@ -1,3 +1,3 @@
-import isMobile from './isMobile';
+import isMobile from './isMobile'
 
-export { isMobile };
+export { isMobile }

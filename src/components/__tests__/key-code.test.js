@@ -1,18 +1,18 @@
-import React from 'react';
+import React from 'react'
 
-import KeyCode from '../key-code';
+import KeyCode from '../key-code'
 
 describe.skip(`${KeyCode.name} Component`, () => {
   it('should with correct styles', () => {
     const defaultProps = {
       keyCode: null,
       keyText: '',
-      handleClick: () => {}
-    };
+      handleClick: () => {},
+    }
 
-    const snap = mount(<KeyCode {...defaultProps} />);
-    const snapJson = enzymeToJson(snap);
+    const snap = mount(<KeyCode {...defaultProps} />)
+    const snapJson = enzymeToJson(snap)
 
-    expect(snapJson).toMatchSnapshot();
-  });
-});
+    expect(snapJson).toMatchSnapshot()
+  })
+})

@@ -1,30 +1,24 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions,jsx-a11y/click-events-have-key-events */
-import React from 'react';
-import PropTypes from 'prop-types';
-import { css } from 'emotion';
+import React from 'react'
+import { css } from 'emotion'
 
-const propTypes = {
-  keyCode: PropTypes.number,
-  keyText: PropTypes.string.isRequired,
+interface IKeyCodeProps {
+  handleClick: (event: React.MouseEvent<HTMLSpanElement>) => void
+  keyCode: number
+  keyText: string
+}
 
-  handleClick: PropTypes.func.isRequired
-};
-
-const defaultProps = {
-  keyCode: null
-};
-
-const KeyCode = ({ keyCode, keyText, handleClick }) => (
+const KeyCode: React.FC<IKeyCodeProps> = ({
+  keyCode,
+  keyText,
+  handleClick,
+}) => (
   <div className={keyCodeCss}>
     <span className="key-code-code">{keyCode}</span>
     <span className="key-code-text" onClick={handleClick}>
       {keyText || 'What key code is that?'}
     </span>
   </div>
-);
-
-KeyCode.propTypes = propTypes;
-KeyCode.defaultProps = defaultProps;
+)
 
 // -------
 // STYLING
@@ -59,6 +53,6 @@ const keyCodeCss = css`
     text-decoration: none;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
   }
-`;
+`
 
-export default KeyCode;
+export default KeyCode

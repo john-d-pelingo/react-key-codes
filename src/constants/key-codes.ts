@@ -1,4 +1,6 @@
-const KEY_CODES = {
+type IKeyCodes = { [key in number]: string }
+
+const KEY_CODES: IKeyCodes = {
   8: 'backspace',
   9: 'tab',
   13: 'enter',
@@ -97,7 +99,7 @@ const KEY_CODES = {
   219: 'open bracket',
   220: 'back slash',
   221: 'close braket',
-  222: 'single quote'
-};
+  222: 'single quote',
+}
 
-export default KEY_CODES;
+export default KEY_CODES

@@ -1,4 +1,4 @@
-import { CLEAR_BLUE, DARK_BLACK } from './colors';
+import { CLEAR_BLUE, DARK_BLACK } from './colors'
 
 // language=CSS
 export default `
@@ -218,4 +218,4 @@ export default `
   body {
     font-family : Raleway, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
-`;
+`
