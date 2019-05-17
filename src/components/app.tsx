@@ -12,6 +12,7 @@ interface IAppState {
   newKeyCode: null | string
 }
 
+// TODO: use function component with hooks
 class App extends React.Component<IAppProps, IAppState> {
   private appDomNode = React.createRef<HTMLDivElement>()
 
@@ -103,9 +104,11 @@ class App extends React.Component<IAppProps, IAppState> {
       // tabindex="0" allows elements besides links and form elements to receive keyboard focus
       // See http://webaim.org/techniques/keyboard/tabindex for more information
       <div
-        className={app}
+        className={appCss}
         tabIndex={0}
+        // TODO: what does this do?
         onBlur={this.handleBlur}
+        // TODO: maybe attach to window
         onKeyDown={this.handleKeyDown}
         ref={this.appDomNode}
       >
@@ -129,7 +132,7 @@ class App extends React.Component<IAppProps, IAppState> {
 // STYLING
 // -------
 
-const app = css`
+const appCss = css`
   display: table;
   height: 100%;
   margin: 0 auto;

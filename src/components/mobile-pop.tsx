@@ -2,7 +2,7 @@ import React from 'react'
 import { css } from 'emotion'
 
 const MobilePop: React.FC = () => (
-  <div className={mobilePop}>
+  <div aria-label="mobile-pop" className={mobilePopCss}>
     <span className="hello-it-seems">
       Hello! <br />
       It seems like you are browsing this webpage without a keyboard or a mouse.{' '}
@@ -16,7 +16,7 @@ const MobilePop: React.FC = () => (
 // STYLING
 // -------
 
-const mobilePop = css`
+const mobilePopCss = css`
   display: table;
   height: 100%;
   margin: 0 auto;

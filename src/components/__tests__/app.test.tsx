@@ -1,15 +1,18 @@
 import React from 'react'
+import { render } from 'react-testing-library'
 
 import App from '../app'
 
-describe.skip(`${App.name} Component`, () => {
-  it('should with correct styles', () => {
-    const snap = mount(<App />)
-    const snapJson = enzymeToJson(snap)
+describe('components - App', () => {
+  it.only('mounts', () => {
+    const { getByText } = render(<App />)
 
-    expect(snapJson).toMatchSnapshot()
+    const element = getByText(/press something/i)
+
+    expect(element).toMatchSnapshot()
   })
 
+  // TODO: checkpoint
   it('should render without crashing', () => {
     const wrapper = mount(<App />)
 

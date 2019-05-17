@@ -1,18 +1,28 @@
 import React from 'react'
+import { render } from 'react-testing-library'
 
 import KeyCode from '../key-code'
 
-describe.skip(`${KeyCode.name} Component`, () => {
-  it('should with correct styles', () => {
-    const defaultProps = {
-      keyCode: null,
-      keyText: '',
-      handleClick: () => {},
-    }
+describe('components - KeyCode', () => {
+  it('displays the key code and its value', () => {
+    const { getByLabelText } = render(
+      <KeyCode keyCode={101} keyText="numpad 5" />,
+    )
 
-    const snap = mount(<KeyCode {...defaultProps} />)
-    const snapJson = enzymeToJson(snap)
+    const keyCodeElement = getByLabelText('key-code')
+    const keyCodeCodeElement = getByLabelText('key-code-code')
 
-    expect(snapJson).toMatchSnapshot()
+    expect(keyCodeElement.textContent).toBe('101')
+    expect(keyCodeCodeElement.textContent).toBe('numpad 5')
+  })
+
+  it('displays that the key code is unknown', () => {
+    const { getByLabelText } = render(<KeyCode keyCode={88} />)
+
+    const keyCodeElement = getByLabelText('key-code')
+    const keyCodeCodeElement = getByLabelText('key-code-code')
+
+    expect(keyCodeElement.textContent).toBe('88')
+    expect(keyCodeCodeElement.textContent).toBe('What key code is that?')
   })
 })

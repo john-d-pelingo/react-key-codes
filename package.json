@@ -27,7 +27,7 @@
     "start:prod": "serve -l 8080",
     "sweep": "rimraf build coverage",
     "test": "cross-env CI=true react-scripts test --env=jsdom",
-    "test:w": "cross-env react-scripts test --env=jsdom --no-cache --verbose",
+    "test:w": "cross-env react-scripts test --env=jsdom --no-cache --verbose=false",
     "validate": "yarn lint && yarn format:d"
   },
   "keywords": [
@@ -50,6 +50,7 @@
     "cross-env": "^5.2.0",
     "husky": "^2.3.0",
     "jest-dom": "^3.0.0",
+    "jest-emotion": "^10.0.11",
     "lint-staged": "^8.1.0",
     "node-sass": "^4.11.0",
     "npm-run-all": "^4.1.5",

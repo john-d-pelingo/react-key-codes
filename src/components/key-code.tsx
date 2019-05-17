@@ -2,21 +2,27 @@ import React from 'react'
 import { css } from 'emotion'
 
 interface IKeyCodeProps {
-  handleClick: (event: React.MouseEvent<HTMLSpanElement>) => void
+  handleClick?: (event: React.MouseEvent<HTMLSpanElement>) => void
   keyCode: number
-  keyText: string
+  keyText?: string
 }
 
 const KeyCode: React.FC<IKeyCodeProps> = ({
   keyCode,
   keyText,
-  handleClick,
+  handleClick = () => undefined,
 }) => (
   <div className={keyCodeCss}>
-    <span className="key-code-code">{keyCode}</span>
-    <span className="key-code-text" onClick={handleClick}>
-      {keyText || 'What key code is that?'}
+    <span aria-label="key-code" className="key-code-code">
+      {keyCode}
     </span>
+    <button
+      aria-label="key-code-code"
+      className="key-code-text"
+      onClick={handleClick}
+    >
+      {keyText || 'What key code is that?'}
+    </button>
   </div>
 )
 

@@ -15,10 +15,6 @@ export const baseStyles = `
     -webkit-box-sizing: inherit;
   }
 
-  *:focus {
-    outline: none;
-  }
-
   html,
   body,
   blockquote,

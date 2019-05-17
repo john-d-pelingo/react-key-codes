@@ -1,12 +1,14 @@
 import React from 'react'
+import { render } from 'react-testing-library'
 
 import MobilePop from '../mobile-pop'
 
-describe.skip(`${MobilePop.name} Component`, () => {
-  it('should with correct styles', () => {
-    const snap = mount(<MobilePop />)
-    const snapJson = enzymeToJson(snap)
+describe('components - MobilePop', () => {
+  it('mounts', () => {
+    const { getByLabelText } = render(<MobilePop />)
 
-    expect(snapJson).toMatchSnapshot()
+    const mobilePopElement = getByLabelText('mobile-pop')
+
+    expect(mobilePopElement).toMatchSnapshot()
   })
 })
