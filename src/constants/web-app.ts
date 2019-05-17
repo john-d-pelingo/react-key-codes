@@ -1,1 +1,1 @@
-export const PAGE_TITLE = 'React Key Codes'
+export const pageTitle = 'React Key Codes'

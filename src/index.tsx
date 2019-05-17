@@ -3,12 +3,12 @@ import * as ReactDOM from 'react-dom'
 import { injectGlobal } from 'emotion'
 
 import { App, MobilePop } from './components'
-import { BASE_STYLES } from './constants'
-import { isMobile } from './utils'
+import { baseStyles } from './constants/base-styles'
+import { isMobile } from './utils/isMobile'
 import * as serviceWorker from './serviceWorker'
 
 // Global Styles
-injectGlobal(BASE_STYLES)
+injectGlobal(baseStyles)
 
 declare var window: ICustomWindow
 

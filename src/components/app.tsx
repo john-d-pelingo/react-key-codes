@@ -1,8 +1,8 @@
 import React from 'react'
 import { css } from 'emotion'
 
-import { KEY_CODES, PAGE_TITLE } from '../constants'
-
+import { keyCodes } from '../constants/key-codes'
+import { pageTitle } from '../constants/web-app'
 import KeyCode from './key-code'
 
 interface IAppProps {}
@@ -70,7 +70,7 @@ class App extends React.Component<IAppProps, IAppState> {
         newKeyCode: null,
       },
       () => {
-        document.title = PAGE_TITLE
+        document.title = pageTitle
       },
     )
   }
@@ -88,8 +88,8 @@ class App extends React.Component<IAppProps, IAppState> {
       typeof event.which === 'number' ? event.which : event.keyCode
 
     this.setState({
-      newKey: KEY_CODES[newKeyCode]
-        ? KEY_CODES[newKeyCode]
+      newKey: keyCodes[newKeyCode]
+        ? keyCodes[newKeyCode]
         : event.key.toLowerCase(),
       newKeyCode: String(newKeyCode),
       // or event.which || event.keyCode || 0;

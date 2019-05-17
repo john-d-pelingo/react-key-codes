@@ -1,6 +1,6 @@
 type IKeyCodes = { [key in number]: string }
 
-const KEY_CODES: IKeyCodes = {
+export const keyCodes: IKeyCodes = {
   8: 'backspace',
   9: 'tab',
   13: 'enter',
@@ -101,5 +101,3 @@ const KEY_CODES: IKeyCodes = {
   221: 'close braket',
   222: 'single quote',
 }
-
-export default KEY_CODES

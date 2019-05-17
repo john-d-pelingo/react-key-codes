@@ -1,7 +1,7 @@
-import { CLEAR_BLUE, DARK_BLACK } from './colors'
+import { clearBlue, darkBlack } from './colors'
 
 // language=CSS
-export default `
+export const baseStyles = `
   /* === Reset === */
   html {
     box-sizing: border-box;
@@ -85,7 +85,7 @@ export default `
   }
 
   body {
-    color: ${DARK_BLACK};
+    color: ${darkBlack};
     font-size: 1rem;
     line-height: 1.3125;
   }
@@ -148,7 +148,7 @@ export default `
   }
 
   a {
-    color: ${CLEAR_BLUE};
+    color: ${clearBlue};
     cursor: pointer !important;
     text-decoration: none;
   }
