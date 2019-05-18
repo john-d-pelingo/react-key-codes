@@ -27,7 +27,7 @@
     "start": "cross-env react-scripts start",
     "start:prod": "serve -l 8080",
     "sweep": "rimraf build coverage",
-    "test": "cross-env CI=true react-scripts test --env=jsdom --no-cache",
+    "test": "cross-env CI=true react-scripts test --env=jsdom --no-cache -u",
     "test:w": "cross-env react-scripts test --env=jsdom --no-cache --verbose=false",
     "validate": "yarn lint && yarn format:d"
   },
