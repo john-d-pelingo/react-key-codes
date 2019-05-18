@@ -7,102 +7,31 @@
 
 # react-key-codes
 
-Reveal the JavaScript key codes on key down. Built with react and redux and friends. Bootstrapped with the help of Facebook's create-react-app.                         
+Reveal the JavaScript key codes on key down. Built with react and redux and friends. Bootstrapped with the help of Facebook's create-react-app.
 
 Try the demo at [https://john-d-pelingo.github.io/react-key-codes/](https://john-d-pelingo.github.io/react-key-codes/).
 
-## Stack
+## Quick Setup
 
-- [x] Prop-Types
-- [x] React
-- [x] React-Dom
+Install all of the application's dependencies:
 
-## Development Stack
+`npm install` or `yarn install`
 
-- [x] coveralls
-- [x] cross-env
-- [x] eslint
-- [x] fs-extra
-- [x] gh-pages
-- [x] node-sass
-- [x] nodemon
-- [x] npm-run-all
-- [x] rimraf
+Next, you can start the application in a local environment with:
 
-## Test Stack 
+`npm install` or `yarn start`
 
-- [x] enzyme
-- [x] jest
-- [x] react-test-renderer
+The browser should automatically open to `http://localhost:3000` which
+will display the application running.
 
-Alongside pure JavaScript.
+Otherwise, you can build application into the `<rootDir>/build` directory with:
 
-## Installation
+`npm run build` or `yarn build`
 
-Clone the repository:
+After that you can serve the optimized web application build at
+`http://localhost:8080` by default locally with:
 
-```sh
-$ git clone https://github.com/john-d-pelingo/react-key-codes && cd react-key-codes
-```
-
-Install npm dependencies:
-
-```sh
-$ npm install
-```
-
-## Available Scripts
-
-Taken from the official create-react-app [docs](https://github.com/facebookincubator/create-react-app#getting-started).
-
-In the project directory, you can run:
-
-```sh
-$ npm start
-```
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-```sh
-$ npm test
-```
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#running-tests) 
-for more information.
-
-```sh
-$ npm run build
-```
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#deployment) 
-for more information.
-
-```sh
-$ npm run eject
-```
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build 
-dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have 
-full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this 
-point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this 
-feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+`npm run start:prod` or `yarn start:prod`
 
 ## Contributing
 

@@ -9,20 +9,20 @@ describe('components - KeyCode', () => {
       <KeyCode keyCode={101} keyText="numpad 5" />,
     )
 
-    const keyCodeElement = getByLabelText('key-code')
-    const keyCodeCodeElement = getByLabelText('key-code-code')
+    const keyCodeNumberElement = getByLabelText('key-code-number')
+    const keyCodeButtonElement = getByLabelText('key-code-button')
 
-    expect(keyCodeElement.textContent).toBe('101')
-    expect(keyCodeCodeElement.textContent).toBe('numpad 5')
+    expect(keyCodeNumberElement.textContent).toBe('101')
+    expect(keyCodeButtonElement.textContent).toBe('numpad 5')
   })
 
   it('displays that the key code is unknown', () => {
     const { getByLabelText } = render(<KeyCode keyCode={88} />)
 
-    const keyCodeElement = getByLabelText('key-code')
-    const keyCodeCodeElement = getByLabelText('key-code-code')
+    const keyCodeNumberElement = getByLabelText('key-code-number')
+    const keyCodeButtonElement = getByLabelText('key-code-button')
 
-    expect(keyCodeElement.textContent).toBe('88')
-    expect(keyCodeCodeElement.textContent).toBe('What key code is that?')
+    expect(keyCodeNumberElement.textContent).toBe('88')
+    expect(keyCodeButtonElement.textContent).toBe('What key code is that?')
   })
 })

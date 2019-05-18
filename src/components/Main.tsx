@@ -63,6 +63,7 @@ export const Main: React.FC = () => {
     // NOTE: tabindex="0" allows elements besides links and form elements to receive keyboard focus
     // NOTE: See http://webaim.org/techniques/keyboard/tabindex for more information
     <div
+      aria-label="key-code-app"
       className={appCss}
       tabIndex={0}
       onBlur={handleBlur}

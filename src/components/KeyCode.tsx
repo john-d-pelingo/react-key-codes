@@ -13,12 +13,12 @@ export const KeyCode: React.FC<IKeyCodeProps> = ({
   handleClick = () => undefined,
 }) => (
   <div className={keyCodeCss}>
-    <span aria-label="key-code" className="key-code-code">
+    <span aria-label="key-code-number" className="key-code-number">
       {keyCode}
     </span>
     <button
-      aria-label="key-code-code"
-      className="key-code-text"
+      aria-label="key-code-button"
+      className="key-code-button"
       onClick={handleClick}
     >
       {keyText || 'What key code is that?'}
@@ -34,14 +34,14 @@ const keyCodeCss = css`
   display: table-cell;
   vertical-align: middle;
 
-  .key-code-code {
+  .key-code-number {
     display: block;
     font-size: 300px;
     line-height: 320px;
     padding-bottom: 40px;
   }
 
-  .key-code-text {
+  .key-code-button {
     background: #eff0f2;
     border-radius: 4px;
     border-top: 1px solid rgba(255, 255, 255, 0.8);
