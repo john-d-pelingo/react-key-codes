@@ -3,7 +3,7 @@
   "version": "0.0.7",
   "description": "Reveal the JavaScript key codes on key down. Built with react and friends. Bootstrapped with the help of Facebook's create-react-app.",
   "private": false,
-  "homepage": "https://john-d-pelingo.github.io/react-key-codes",
+  "homepage": "https://example.com/",
   "author": "John Darryl Pelingo <johndarrylpelingo@gmail.com> (https://github.com/john-d-pelingo)",
   "license": "MIT",
   "repository": {
@@ -15,7 +15,7 @@
   },
   "scripts": {
     "build": "cross-env react-scripts build",
-    "build:ci": "run-s test build",
+    "build:ci": "yarn build",
     "eject": "cross-env react-scripts eject",
     "format": "yarn pretty --write",
     "format:d": "yarn pretty --list-different",
