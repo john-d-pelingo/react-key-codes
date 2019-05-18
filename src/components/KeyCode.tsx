@@ -26,10 +26,6 @@ export const KeyCode: React.FC<IKeyCodeProps> = ({
   </div>
 )
 
-// -------
-// STYLING
-// -------
-
 const keyCodeCss = css`
   display: table-cell;
   vertical-align: middle;

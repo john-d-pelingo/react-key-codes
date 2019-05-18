@@ -88,10 +88,6 @@ export const Main: React.FC = () => {
   )
 }
 
-// -------
-// STYLING
-// -------
-
 const appCss = css`
   display: table;
   height: 100%;

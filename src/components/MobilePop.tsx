@@ -12,10 +12,6 @@ export const MobilePop: React.FC = () => (
   </div>
 )
 
-// -------
-// STYLING
-// -------
-
 const mobilePopCss = css`
   display: table;
   height: 100%;

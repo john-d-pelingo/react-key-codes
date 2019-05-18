@@ -1,3 +1,4 @@
+import { produce } from 'immer'
 import { useEffect, useReducer, useRef } from 'react'
 
 import { keyCodes } from 'constants/keyCodes'
@@ -13,40 +14,27 @@ import {
   SET_NEW_KEY_CODE,
 } from './types'
 
-// TODO: try out immer https://github.com/immerjs/immer
-function reducer(
-  state: IKeyCodeState,
-  action: KeyCodeActionTypes,
-): IKeyCodeState {
-  switch (action.type) {
-    case BLUR:
-      return {
-        ...state,
-        isBlurred: true,
-      }
+function reducer(state: IKeyCodeState, action: KeyCodeActionTypes) {
+  return produce(state, draft => {
+    switch (action.type) {
+      case BLUR:
+        draft.isBlurred = true
+        break
 
-    case RESET_KEY_CODE:
-      return {
-        ...state,
-        newKeyCode: null,
-      }
+      case RESET_KEY_CODE:
+        draft.newKeyCode = null
+        break
 
-    case SET_NEW_KEY_CODE:
-      return {
-        ...state,
-        newKey: action.payload.key,
-        newKeyCode: action.payload.keyCode,
-      }
+      case SET_NEW_KEY_CODE:
+        draft.newKey = action.payload.key
+        draft.newKeyCode = action.payload.keyCode
+        break
 
-    case FOCUS:
-      return {
-        ...state,
-        isBlurred: false,
-      }
-
-    default:
-      return state
-  }
+      case FOCUS:
+        draft.isBlurred = false
+        break
+    }
+  })
 }
 
 export function useKeyCode<T extends HTMLElement>(initialState: IKeyCodeState) {

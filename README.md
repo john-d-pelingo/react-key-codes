@@ -33,6 +33,8 @@ After that you can serve the optimized web application build at
 
 `npm run start:prod` or `yarn start:prod`
 
+## TODO: add more stuff
+
 ## Contributing
 
 1. Fork it!
