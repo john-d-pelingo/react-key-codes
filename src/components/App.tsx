@@ -1,81 +1,50 @@
 import { css } from 'emotion'
-import React from 'react'
+import React, { useEffect } from 'react'
 
-import { keyCodes } from '../constants/keyCodes'
 import { pageTitle } from '../constants/webApp'
+import { useKeyCode } from '../hooks/useKeyCode'
+import { IKeyCodeState } from '../hooks/useKeyCode/types'
 import { KeyCode } from './KeyCode'
 
-interface IAppState {
-  blurred: boolean
-  newKey: string
-  newKeyCode: null | string
+const initialState: IKeyCodeState = {
+  isBlurred: true,
+  newKey: '',
+  newKeyCode: null,
 }
 
-// TODO: use function component with hooks
-export class App extends React.Component<{}, IAppState> {
-  private appDomNode = React.createRef<HTMLDivElement>()
+export const App: React.FC = () => {
+  const {
+    appElement,
+    handleBlur,
+    handleClick: handleKeyCodeClick,
+    handleFocus,
+    handleKeyDown: handleKeyCodeKeyDown,
+    newKey,
+    newKeyCode,
+  } = useKeyCode<HTMLDivElement>(initialState)
 
-  constructor(props: {}) {
-    super(props)
-
-    /* istanbul ignore next */
+  useEffect(() => {
     if (process.env.NODE_ENV !== 'test') {
-      // eslint-disable-next-line global-require
       const ReactGA = require('react-ga')
 
       ReactGA.initialize('UA-70753213-5')
-      // This just needs to be called once since we have no routes in this case.
+      // NOTE: This just needs to be called once since we have no routes in this case.
       ReactGA.pageview(window.location.pathname)
     }
-  }
+  }, [])
 
-  state = {
-    blurred: false,
-    newKey: '',
-    newKeyCode: null,
-  }
-
-  componentDidMount() {
-    // Focus the DOM element
-    if (this.appDomNode.current) {
-      this.appDomNode.current.focus()
+  useEffect(() => {
+    if (newKey && newKeyCode) {
+      document.title = `${newKeyCode} : ${newKey}`
     }
-  }
+  }, [newKey, newKeyCode])
 
-  componentWillUpdate(_: Unused, nextState: IAppState) {
-    if (nextState.newKeyCode && nextState.newKey) {
-      document.title = `${nextState.newKeyCode} : ${nextState.newKey}`
-    }
-  }
-
-  componentDidUpdate() {
-    if (this.state.blurred) {
-      this.setState({
-        blurred: false,
-      })
-    }
-  }
-
-  handleBlur = () => {
-    this.setState({
-      blurred: true,
-    })
-  }
-
-  handleClick = (event: React.MouseEvent<HTMLSpanElement>) => {
+  const handleClick = (event: React.MouseEvent<HTMLSpanElement>) => {
     event.preventDefault()
-
-    this.setState(
-      {
-        newKeyCode: null,
-      },
-      () => {
-        document.title = pageTitle
-      },
-    )
+    handleKeyCodeClick()
   }
 
-  handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     // Keep the original synthetic event around.
     // See https://fb.me/react-event-pooling for more information.
     event.persist()
@@ -84,47 +53,41 @@ export class App extends React.Component<{}, IAppState> {
       event.preventDefault()
     }
 
-    const newKeyCode =
-      typeof event.which === 'number' ? event.which : event.keyCode
-
-    this.setState({
-      newKey: keyCodes[newKeyCode]
-        ? keyCodes[newKeyCode]
-        : event.key.toLowerCase(),
-      newKeyCode: String(newKeyCode),
-      // or event.which || event.keyCode || 0;
+    handleKeyCodeKeyDown({
+      key: event.key,
+      which: event.which,
     })
   }
 
-  render() {
-    const { newKey, newKeyCode } = this.state
-
-    return (
-      // tabindex="0" allows elements besides links and form elements to receive keyboard focus
-      // See http://webaim.org/techniques/keyboard/tabindex for more information
-      <div
-        className={appCss}
-        tabIndex={0}
-        // TODO: what does this do?
-        onBlur={this.handleBlur}
-        // TODO: maybe attach to window
-        onKeyDown={this.handleKeyDown}
-        ref={this.appDomNode}
-      >
-        {newKeyCode ? (
-          <KeyCode
-            keyCode={newKeyCode}
-            keyText={newKey}
-            handleClick={this.handleClick}
-          />
-        ) : (
-          <span className="press-something">
-            Press something in your keyboard
-          </span>
-        )}
-      </div>
-    )
-  }
+  return (
+    // NOTE: tabindex="0" allows elements besides links and form elements to receive keyboard focus
+    // NOTE: See http://webaim.org/techniques/keyboard/tabindex for more information
+    <div
+      className={appCss}
+      tabIndex={0}
+      // TODO: what does this do?
+      onBlur={handleBlur}
+      onFocus={handleFocus}
+      // TODO: maybe attach to window
+      onKeyDown={handleKeyDown}
+      ref={appElement}
+    >
+      {newKeyCode ? (
+        <KeyCode
+          keyCode={Number(newKeyCode)}
+          keyText={newKey}
+          handleClick={event => {
+            handleClick(event)
+            document.title = pageTitle
+          }}
+        />
+      ) : (
+        <span className="press-something">
+          Press something in your keyboard
+        </span>
+      )}
+    </div>
+  )
 }
 
 // -------
