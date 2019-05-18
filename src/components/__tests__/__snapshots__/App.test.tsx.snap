@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components - App mounts 1`] = `
+<span
+  class="press-something"
+>
+  Press a key in your keyboard
+</span>
+`;
