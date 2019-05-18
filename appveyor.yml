@@ -24,7 +24,7 @@ install:
   # Get the latest stable version of Node.js
   - ps: Install-Product node $env:nodejs_version
   # install modules
-  - npm install
+  - yarn install
 
 # Don't actually build.
 build: off
@@ -36,6 +36,6 @@ branches:
 # Post-install test scripts.
 test_script:
   # Output useful info for debugging.
-  - node --version && npm --version
+  - node --version && yarn --version
   # Run all tests.
-  - npm run build
+  - yarn build:ci

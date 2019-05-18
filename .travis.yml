@@ -11,9 +11,9 @@ node_js:
 
 before_install: rm -rf node_modules
 
-install: npm install
+install: yarn install
 
-script: npm run build:ci
+script: yarn build:ci
 
 #after_success: ./node_modules/gh-pages/bin/gh-pages --repo https://$GITHUB_TOKEN@github.com/john-d-pelingo/react-key-codes.git -d build
 
