@@ -4,12 +4,16 @@ import { render } from 'react-testing-library'
 import { App } from '../App'
 
 describe('components - App', () => {
-  it.only('mounts', () => {
+  it('mounts', () => {
     const { getByText } = render(<App />)
 
     const element = getByText(/press something/i)
 
     expect(element).toMatchSnapshot()
+  })
+
+  it.skip('changes the document title on keypress', () => {
+    // const { getByText } = render(<App />)
   })
 
   // // TODO: finish tests

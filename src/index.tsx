@@ -19,7 +19,6 @@ function conditionallyRenderApp() {
   return isMobile(uAVO) ? <MobilePop /> : <App />
 }
 
-// TODO: JS Meta Keys (CMD of MacOS).
 ReactDOM.render(conditionallyRenderApp(), document.getElementById('root'))
 
 serviceWorker.unregister()

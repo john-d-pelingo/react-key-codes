@@ -65,7 +65,6 @@ export const App: React.FC = () => {
     <div
       className={appCss}
       tabIndex={0}
-      // TODO: what does this do?
       onBlur={handleBlur}
       onFocus={handleFocus}
       // TODO: maybe attach to window
