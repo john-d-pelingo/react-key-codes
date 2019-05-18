@@ -1,7 +1,7 @@
-import React from 'react'
 import { css } from 'emotion'
+import React from 'react'
 
-const MobilePop: React.FC = () => (
+export const MobilePop: React.FC = () => (
   <div aria-label="mobile-pop" className={mobilePopCss}>
     <span className="hello-it-seems">
       Hello! <br />
@@ -31,5 +31,3 @@ const mobilePopCss = css`
     vertical-align: middle;
   }
 `
-
-export default MobilePop

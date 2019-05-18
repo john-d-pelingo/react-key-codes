@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-testing-library'
 
-import App from '../app'
+import { App } from '../App'
 
 describe('components - App', () => {
   it.only('mounts', () => {

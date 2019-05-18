@@ -1,11 +1,12 @@
+import { injectGlobal } from 'emotion'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import { injectGlobal } from 'emotion'
 
-import { App, MobilePop } from './components'
+import { App } from './components/App'
+import { MobilePop } from './components/MobilePop'
 import { baseStyles } from './constants/baseStyles'
-import { isMobile } from './utils/isMobile'
 import * as serviceWorker from './serviceWorker'
+import { isMobile } from './utils/isMobile'
 
 // Global Styles
 injectGlobal(baseStyles)

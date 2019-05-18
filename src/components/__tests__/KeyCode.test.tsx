@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-testing-library'
 
-import KeyCode from '../KeyCode'
+import { KeyCode } from '../KeyCode'
 
 describe('components - KeyCode', () => {
   it('displays the key code and its value', () => {

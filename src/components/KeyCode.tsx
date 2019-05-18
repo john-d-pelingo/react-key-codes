@@ -1,5 +1,5 @@
-import React from 'react'
 import { css } from 'emotion'
+import React from 'react'
 
 interface IKeyCodeProps {
   handleClick?: (event: React.MouseEvent<HTMLSpanElement>) => void
@@ -7,7 +7,7 @@ interface IKeyCodeProps {
   keyText?: string
 }
 
-const KeyCode: React.FC<IKeyCodeProps> = ({
+export const KeyCode: React.FC<IKeyCodeProps> = ({
   keyCode,
   keyText,
   handleClick = () => undefined,
@@ -60,5 +60,3 @@ const keyCodeCss = css`
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
   }
 `
-
-export default KeyCode
