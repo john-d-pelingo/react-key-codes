@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-testing-library'
 
-import MobilePop from '../mobile-pop'
+import MobilePop from '../MobilePop'
 
 describe('components - MobilePop', () => {
   it('mounts', () => {

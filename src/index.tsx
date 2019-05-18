@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom'
 import { injectGlobal } from 'emotion'
 
 import { App, MobilePop } from './components'
-import { baseStyles } from './constants/base-styles'
+import { baseStyles } from './constants/baseStyles'
 import { isMobile } from './utils/isMobile'
 import * as serviceWorker from './serviceWorker'
 

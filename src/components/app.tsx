@@ -1,9 +1,9 @@
 import React from 'react'
 import { css } from 'emotion'
 
-import { keyCodes } from '../constants/key-codes'
-import { pageTitle } from '../constants/web-app'
-import KeyCode from './key-code'
+import { keyCodes } from '../constants/keyCodes'
+import { pageTitle } from '../constants/webApp'
+import KeyCode from './KeyCode'
 
 interface IAppProps {}
 interface IAppState {
