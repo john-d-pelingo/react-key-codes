@@ -1,20 +1,22 @@
 import React from 'react'
 import { render } from 'react-testing-library'
 
-import { App } from '../App'
+import { Main } from '../Main'
 
-describe('components - App', () => {
+describe('components - Main', () => {
   it('mounts', () => {
-    const { getByText } = render(<App />)
+    const { getByText } = render(<Main />)
 
     const element = getByText(/press a key/i)
 
     expect(element).toMatchSnapshot()
   })
 
-  it.skip('changes the document title on keypress', () => {
-    // const { getByText } = render(<App />)
-  })
+  // it.only('changes the document title on keypress', () => {
+  //   const { getByText } = render(<App />)
+  //
+  //   fireEvent
+  // })
 
   // // TODO: finish tests
   // it('should render without crashing', () => {

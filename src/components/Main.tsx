@@ -12,7 +12,7 @@ const initialState: IKeyCodeState = {
   newKeyCode: null,
 }
 
-export const App: React.FC = () => {
+export const Main: React.FC = () => {
   const {
     appElement,
     handleBlur,
