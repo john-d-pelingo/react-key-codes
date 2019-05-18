@@ -4,6 +4,6 @@ exports[`components - App mounts 1`] = `
 <span
   class="press-something"
 >
-  Press something in your keyboard
+  Press a key in your keyboard
 </span>
 `;

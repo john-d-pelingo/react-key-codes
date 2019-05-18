@@ -7,7 +7,7 @@ describe('components - App', () => {
   it('mounts', () => {
     const { getByText } = render(<App />)
 
-    const element = getByText(/press something/i)
+    const element = getByText(/press a key/i)
 
     expect(element).toMatchSnapshot()
   })

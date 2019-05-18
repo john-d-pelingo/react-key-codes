@@ -81,9 +81,7 @@ export const App: React.FC = () => {
           }}
         />
       ) : (
-        <span className="press-something">
-          Press something in your keyboard
-        </span>
+        <span className="press-something">Press a key in your keyboard</span>
       )}
     </div>
   )
