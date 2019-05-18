@@ -6,7 +6,7 @@
 
 # Test against the latest version of this Node.js version.
 environment:
-  nodejs_version: "9.8.0"
+  nodejs_version: '10.15.1'
 
 # What combinations to test.
 #environment:
