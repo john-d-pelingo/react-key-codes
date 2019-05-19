@@ -70,10 +70,7 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/**/*.js",
-      "!src/*.js",
-      "!src/features/*.js",
-      "!src/utilities/test-utils.js",
+      "src/**/*.{ts,tsx}",
       "!<rootDir>/node_modules/"
     ]
   },
