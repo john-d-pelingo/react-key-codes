@@ -4,11 +4,10 @@
 [![dependency-ci][dependency-ci-badge]][dependency-ci-url]
 [![coveralls][coveralls-badge]][coveralls-url]
 [![mit-license][mit-license-badge]][mit-license-url]
-[![netlify][netlify-badge]][netlify-url]
 
 # react-key-codes
 
-Reveal the JavaScript key codes on key down. Built with react and redux and friends. Bootstrapped with the help of Facebook's create-react-app.
+⌨️ Reveal the JavaScript key codes on key d`own. Built with react and friends. Bootstrapped with the help of Facebook's create-react-app.
 
 Try the demo at [https://optimistic-rosalind-94503e.netlify.com/](https://optimistic-rosalind-94503e.netlify.com/).
 
