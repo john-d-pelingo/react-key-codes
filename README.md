@@ -1,9 +1,10 @@
-[![travis-ci][travis-badge]][travis-url]
-[![circle-ci][circle-ci-badge]][circle-ci-url]
-[![appveyor-ci][appveyor-ci-badge]][appveyor-ci-url]
-[![dependency-ci][dependency-ci-badge]][dependency-ci-url]
-[![coveralls][coveralls-badge]][coveralls-url]
-[![mit-license][mit-license-badge]][mit-license-url]
+[![Travis CI](https://travis-ci.org/john-d-pelingo/react-key-codes.svg?branch=master)](https://travis-ci.org/john-d-pelingo/react-key-codes)
+[![Circle CI](https://circleci.com/gh/john-d-pelingo/react-key-codes.svg?style=shield)](https://circleci.com/gh/john-d-pelingo/react-key-codes)
+[![Appveyor CI](https://ci.appveyor.com/api/projects/status/cfvhnwnvn7rfb5li?svg=true)](https://ci.appveyor.com/project/john-d-pelingo/react-key-codes)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e516b3bd-b4e1-4ce0-8305-486a69150f70/deploy-status)](https://app.netlify.com/sites/optimistic-rosalind-94503e/deploys)
+[![Dependency CI](https://dependencyci.com/github/john-d-pelingo/react-key-codes/badge)](https://dependencyci.com/github/john-d-pelingo/react-key-codes)
+[![Coveralls](https://coveralls.io/repos/github/john-d-pelingo/react-key-codes/badge.svg?branch=master)](https://coveralls.io/github/john-d-pelingo/react-key-codes?branch=master)
+[![MIT License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/john-d-pelingo/react-key-codes/blob/master/LICENSE)
 
 # react-key-codes
 
@@ -46,17 +47,3 @@ After that you can serve the optimized web application build at
 ## License
 
 [MIT](https://github.com/john-d-pelingo/react-key-codes/blob/master/LICENSE) &copy; 2017-present
-[travis-badge]: https://travis-ci.org/john-d-pelingo/react-key-codes.svg?branch=master
-[travis-url]: https://travis-ci.org/john-d-pelingo/react-key-codes
-[circle-ci-badge]: https://circleci.com/gh/john-d-pelingo/react-key-codes.svg?style=shield
-[circle-ci-url]: https://circleci.com/gh/john-d-pelingo/react-key-codes
-[appveyor-ci-badge]: https://ci.appveyor.com/api/projects/status/cfvhnwnvn7rfb5li?svg=true
-[appveyor-ci-url]: https://ci.appveyor.com/project/john-d-pelingo/react-key-codes
-[dependency-ci-badge]: https://dependencyci.com/github/john-d-pelingo/react-key-codes/badge
-[dependency-ci-url]: https://dependencyci.com/github/john-d-pelingo/react-key-codes
-[coveralls-badge]: https://coveralls.io/repos/github/john-d-pelingo/react-key-codes/badge.svg?branch=master
-[coveralls-url]: https://coveralls.io/github/john-d-pelingo/react-key-codes?branch=master
-[mit-license-badge]: https://img.shields.io/github/license/mashape/apistatus.svg
-[mit-license-url]: https://github.com/john-d-pelingo/react-key-codes/blob/master/LICENSE
-[netlify-badge]: https://api.netlify.com/api/v1/badges/e516b3bd-b4e1-4ce0-8305-486a69150f70/deploy-status
-[netlify-url]: https://app.netlify.com/sites/optimistic-rosalind-94503e/deploys
