@@ -4,12 +4,13 @@
 [![dependency-ci][dependency-ci-badge]][dependency-ci-url]
 [![coveralls][coveralls-badge]][coveralls-url]
 [![mit-license][mit-license-badge]][mit-license-url]
+[![netlify][netlify-badge]][netlify-url]
 
 # react-key-codes
 
 Reveal the JavaScript key codes on key down. Built with react and redux and friends. Bootstrapped with the help of Facebook's create-react-app.
 
-Try the demo at [https://john-d-pelingo.github.io/react-key-codes/](https://john-d-pelingo.github.io/react-key-codes/).
+Try the demo at [https://optimistic-rosalind-94503e.netlify.com/](https://optimistic-rosalind-94503e.netlify.com/).
 
 ## Quick Setup
 
@@ -46,7 +47,6 @@ After that you can serve the optimized web application build at
 ## License
 
 [MIT](https://github.com/john-d-pelingo/react-key-codes/blob/master/LICENSE) &copy; 2017-present
-
 [travis-badge]: https://travis-ci.org/john-d-pelingo/react-key-codes.svg?branch=master
 [travis-url]: https://travis-ci.org/john-d-pelingo/react-key-codes
 [circle-ci-badge]: https://circleci.com/gh/john-d-pelingo/react-key-codes.svg?style=shield
@@ -59,3 +59,5 @@ After that you can serve the optimized web application build at
 [coveralls-url]: https://coveralls.io/github/john-d-pelingo/react-key-codes?branch=master
 [mit-license-badge]: https://img.shields.io/github/license/mashape/apistatus.svg
 [mit-license-url]: https://github.com/john-d-pelingo/react-key-codes/blob/master/LICENSE
+[netlify-badge]: https://api.netlify.com/api/v1/badges/e516b3bd-b4e1-4ce0-8305-486a69150f70/deploy-status
+[netlify-url]: https://app.netlify.com/sites/optimistic-rosalind-94503e/deploys
