@@ -40,8 +40,7 @@
     "immer": "^3.1.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-ga": "^2.5.7",
-    "sieses": "^0.1.4"
+    "react-ga": "^2.5.7"
   },
   "devDependencies": {
     "@types/jest": "^24.0.13",
