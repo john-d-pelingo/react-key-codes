@@ -14,7 +14,10 @@ import {
   SET_NEW_KEY_CODE,
 } from './types'
 
-function reducer(state: IKeyCodeState, action: KeyCodeActionTypes) {
+function reducer(
+  state: IKeyCodeState,
+  action: KeyCodeActionTypes,
+): IKeyCodeState {
   return produce(state, draft => {
     switch (action.type) {
       case BLUR:
