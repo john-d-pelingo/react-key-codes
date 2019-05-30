@@ -1,9 +1,9 @@
-import React from 'react'
 import {
   fireEvent,
   getByLabelText as rootGetByLabelText,
   render,
-} from 'react-testing-library'
+} from '@testing-library/react'
+import React from 'react'
 
 import { Main } from '../Main'
 
