@@ -24,16 +24,6 @@ export const Main: React.FC = () => {
   } = useKeyCode<HTMLDivElement>(initialState)
 
   useEffect(() => {
-    if (process.env.NODE_ENV !== 'test') {
-      const ReactGA = require('react-ga')
-
-      ReactGA.initialize('UA-70753213-5')
-      // NOTE: This just needs to be called once since we have no routes in this case.
-      ReactGA.pageview(window.location.pathname)
-    }
-  }, [])
-
-  useEffect(() => {
     if (newKey && newKeyCode) {
       document.title = `${newKeyCode} : ${newKey}`
     }
