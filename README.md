@@ -1,7 +1,7 @@
 [![Travis CI](https://travis-ci.org/john-d-pelingo/react-key-codes.svg?branch=master)](https://travis-ci.org/john-d-pelingo/react-key-codes)
 [![Circle CI](https://circleci.com/gh/john-d-pelingo/react-key-codes.svg?style=shield)](https://circleci.com/gh/john-d-pelingo/react-key-codes)
 [![Appveyor CI](https://ci.appveyor.com/api/projects/status/cfvhnwnvn7rfb5li?svg=true)](https://ci.appveyor.com/project/john-d-pelingo/react-key-codes)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/e516b3bd-b4e1-4ce0-8305-486a69150f70/deploy-status)](https://app.netlify.com/sites/optimistic-rosalind-94503e/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e516b3bd-b4e1-4ce0-8305-486a69150f70/deploy-status)](https://app.netlify.com/sites/keyboardcode/deploys)
 [![Dependency CI](https://dependencyci.com/github/john-d-pelingo/react-key-codes/badge)](https://dependencyci.com/github/john-d-pelingo/react-key-codes)
 [![Coveralls](https://coveralls.io/repos/github/john-d-pelingo/react-key-codes/badge.svg?branch=master)](https://coveralls.io/github/john-d-pelingo/react-key-codes?branch=master)
 [![MIT License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/john-d-pelingo/react-key-codes/blob/master/LICENSE)
@@ -10,7 +10,7 @@
 
 ⌨️ Reveal the JavaScript key codes on key d`own. Built with react and friends. Bootstrapped with the help of Facebook's create-react-app.
 
-Try the demo at [https://optimistic-rosalind-94503e.netlify.com/](https://optimistic-rosalind-94503e.netlify.com/).
+Try the demo at [https://keyboardcode.netlify.com/](https://keyboardcode.netlify.com/).
 
 ## Quick Setup
 
