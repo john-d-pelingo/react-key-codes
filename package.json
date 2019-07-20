@@ -34,7 +34,9 @@
     "build:ci": "yarn build",
     "prebuild": "run-s validate test sweep",
     "--PRODUCTION--": "echo \"--PRODUCTION--\" && exit 1",
-    "start:prod": "serve -l 8080"
+    "start:prod": "serve -l 8080",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [
     "create-react-app",
@@ -44,7 +46,8 @@
     "emotion": "^10.0.9",
     "immer": "^3.1.2",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "snyk": "^1.192.0"
   },
   "devDependencies": {
     "@testing-library/react": "^8.0.1",
@@ -85,5 +88,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "snyk": true
 }
