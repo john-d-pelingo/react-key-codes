@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "https://keyboardcode.netlify.com/*"
+  to = "https://windowassistant.netlify.com/key"
+  force = true
